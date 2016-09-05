@@ -21,13 +21,18 @@ namespace FitRaspi
         // Bitte Konstruktor bauen ;)
         public Cl_Athlete(/*...*/)
         {
-            
+                
                 //bla...
                 //bla...
                 //bla...
                 //bla...
                 //bla...
                 //bla...
+        }
+
+        public double calc_kfa()
+        {
+            return (0);
         }
 
     }
