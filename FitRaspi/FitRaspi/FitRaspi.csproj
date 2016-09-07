@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cl_Athlete.cs" />
+    <Compile Include="Cl_MySQL.cs" />
     <Compile Include="Cl_Training.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
