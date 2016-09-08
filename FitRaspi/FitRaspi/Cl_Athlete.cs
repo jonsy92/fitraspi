@@ -40,25 +40,16 @@ namespace FitRaspi
 
         public double calc_kfa(double stomach, double neck, double height, double waist, double butt)
         {
-            double result = 0;
-            double buffer;
+            double result;
 
             if (male)
             {
-                buffer = 0.19077 * Math.Log10(stomach - neck);
-                buffer = 1.0324 - buffer;
-                buffer = buffer + 0.15456 * Math.Log10(height);
-                buffer = 495 / buffer;
-                result = buffer - 450;
+               result = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
             }
 
             else
             {
-                buffer = 0.35004 * Math.Log10(stomach + waist - neck);
-                buffer = 1.29579 - buffer;
-                buffer = buffer + 0.22100 * Math.Log10(height);
-                buffer = 495 / buffer;
-                result = buffer - 450;
+                result = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
             }
 
             return (result);
