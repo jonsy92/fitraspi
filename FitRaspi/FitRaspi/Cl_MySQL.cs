@@ -9,25 +9,19 @@ namespace FitRaspi
 {
     class Cl_MySQL
     {
-        private static string connString;
-
-        public static string ConnString
-        {
-            get
-            {
-                return connString;
-            }
-
-            set
-            {
-                connString = value;
-            }
-        }
-
-        private static void OpenSQLConnection()
+        
+        
+        private static void OpenSQLConnection(string server,string userid, string password, string database )
         {
          
-            using (SqlConnection connection = new SqlConnection(connString))
+            MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
+                conn_string.Server = server;
+                conn_string.UserID = userid;
+                conn_string.Password = password;
+                conn_string.Database = database;
+         
+         
+            using (SqlConnection connection = new SqlConnection(conn_string.ToString()))
             {
                 connection.Open();
 
