@@ -11,7 +11,7 @@ namespace FitRaspi
         // Bitte Klassen Properties anlegen
         private string name;
         private string firstname;
-        private datetime birthday; // Hab den Datentyp in datetype geändert
+        private datetime birthday; // Hab den Datentyp in datetime geändert
         private string sex;
         private double weight;
         private double height;
