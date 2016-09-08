@@ -16,7 +16,7 @@ namespace FitRaspi
         private string name;
         private string firstname;
         private string birthday;
-        private Boolean male;
+        private string sex;
         private double weight;
         private double height;
         private string email;
@@ -24,13 +24,13 @@ namespace FitRaspi
         private double ffmi;
         private double kfa;
 
-        public Cl_Athlete (string n, string f, string b, string e, Boolean m, double w, double h, double ffm, double ffmi, double kfa)
+        public Cl_Athlete (string n, string f, string b, string e, string m, double w, double h, double ffm, double ffmi, double kfa)
         {
             this.name = n;
             this.firstname = f;
             this.birthday = b;
             this.email = e;
-            this.male = m;
+            this.sex = m;
             this.weight = w;
             this.height = h;
             this.ffm = ffm;
@@ -42,7 +42,7 @@ namespace FitRaspi
         {
             double result;
 
-            if (male)
+            if (sex == "male")
             {
                result = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
             }
