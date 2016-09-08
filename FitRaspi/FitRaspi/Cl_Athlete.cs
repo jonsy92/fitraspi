@@ -8,14 +8,10 @@ namespace FitRaspi
 {
     class Cl_Athlete
     {
-
-       
-
-
         // Bitte Klassen Properties anlegen
         private string name;
         private string firstname;
-        private string birthday;
+        private datetime birthday; // Hab den Datentyp in datetype geändert
         private string sex;
         private double weight;
         private double height;
@@ -23,27 +19,16 @@ namespace FitRaspi
         private double ffm;
         private double ffmi;
         private double kfa;
-        private double stomach;
-        private double neck;
-        private double waist;
-        private double butt;
+      
 
-        public Cl_Athlete (string name, string firstname, string birthday, string email, string sex, double weight, double height, double ffm, double ffmi, double kfa, double stomach, double neck, double waist, double butt)
+        public Cl_Athlete (string name, string firstname, string email, string sex, double weight, double height)
         {
             this.name = name;
             this.firstname = firstname;
-            this.birthday = birthday;
             this.email = email;
             this.sex = sex;
             this.weight = weight;
             this.height = height;
-            this.ffm = ffm;
-            this.ffmi = ffmi;
-            this.kfa = kfa;
-            this.stomach = stomach;
-            this.neck = neck;
-            this.waist = waist;
-            this.butt = butt;
         }
 
         public double calc_kfa(double stomach, double neck, double height)
@@ -81,5 +66,18 @@ namespace FitRaspi
 
             return (result);
         }
+        
+        public int calc_age(datetime birthdate)
+         {
+             int age;
+             
+             // age = ... --> Hier darfste en bissel forschen, 
+             //               wie man aus dem Geburtsjahr mit dem Datentyp Datetime das aktuelle Alter in int ausrechnen kann.
+             //               Tipps: schau dir den Typ Datetime mal bei MSDN an, einfach googlen ;)
+             //              
+             
+             return (age);
+         }
+    
     }
 }
