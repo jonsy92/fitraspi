@@ -8,6 +8,7 @@ namespace FitRaspi
 {
     static class Program
     {
+      
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
