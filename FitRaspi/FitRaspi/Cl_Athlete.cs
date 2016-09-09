@@ -38,7 +38,7 @@ namespace FitRaspi
             this.kfa = kfa;
         }
 
-        public double calc_kfa(double stomach, double neck, double height, double waist, double butt)
+        public  double calc_kfa(double stomach, double neck, double height, double waist, double butt)
         {
             double result;
 

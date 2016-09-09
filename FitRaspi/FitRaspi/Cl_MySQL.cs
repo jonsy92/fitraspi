@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
 
 namespace FitRaspi
 {
@@ -14,8 +16,8 @@ namespace FitRaspi
         private static void OpenSQLConnection(string server,string userid, string password, string database )
         {
          
-            MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
-                conn_string.Server = server;
+                SqlConnectionStringBuilder conn_string = new SqlConnectionStringBuilder(;
+                conn_string.
                 conn_string.UserID = userid;
                 conn_string.Password = password;
                 conn_string.Database = database;
