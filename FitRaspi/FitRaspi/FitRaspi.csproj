@@ -49,6 +49,7 @@
     <Compile Include="Cl_Athlete.cs" />
     <Compile Include="Cl_MySQL.cs" />
     <Compile Include="Cl_Training.cs" />
+    <Compile Include="Cl_User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testformular.cs">
