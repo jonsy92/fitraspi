@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FitRaspi
+﻿namespace Test
 {
     partial class Form1
     {
