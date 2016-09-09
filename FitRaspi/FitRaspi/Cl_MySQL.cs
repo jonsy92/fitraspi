@@ -9,6 +9,15 @@ namespace FitRaspi
 {
     class Cl_MySQL
     {
+       public static void OpenSQLConnection()
+        {
+            string myConnectionString = "server=localhost;uid=root;" + "pwd=;database=fit-rasbi;";
+            using (SqlConnection connection = new SqlConnection(myConnectionString))
+            {
+                connection.Open();
+            }
+        } 
+
        public static void OpenSQLConnection(string server, string userid, string password, string database)
         {
             SqlConnectionStringBuilder conn_string = new SqlConnectionStringBuilder();
@@ -20,10 +29,11 @@ namespace FitRaspi
 
             using (SqlConnection connection = new SqlConnection(conn_string.ToString()))
             {
-                connection.Open();
-                Console.WriteLine("State: {0}", connection.State);
-                Console.WriteLine("ConnectionString: {0}",
-                    connection.ConnectionString);
+                    connection.Open();
+                    Console.WriteLine("State: {0}", connection.State);
+                    Console.WriteLine("ConnectionString: {0}",
+                        connection.ConnectionString);
+             
             }
 
     }
