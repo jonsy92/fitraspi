@@ -8,18 +8,13 @@ namespace FitRaspi
 {
     class Cl_Athlete
     {
-
-       
-
-
-        // Bitte Klassen Properties anlegen
         private string name;
         private string firstname;
         private string birthday;
         private string sex;
+        private string email;
         private double weight;
         private double height;
-        private string email;
         private double ffm;
         private double ffmi;
         private double kfa;
@@ -77,9 +72,20 @@ namespace FitRaspi
         {
             double result;
 
-            result = ffm / (height + height) + 6.3 * (1.8 - height);
+            result = ffm / (height * height) + 6.3 * (1.8 - height);
 
             return (result);
+        }
+
+        public static int calc_age(DateTime birthday)
+        {
+            int years = DateTime.Now.Year - birthday.Year;
+            birthday = birthday.AddYears(years);
+            if (DateTime.Now.CompareTo(birthday) < 0)
+            {
+                years--;
+            }
+            return (years);
         }
     }
 }
