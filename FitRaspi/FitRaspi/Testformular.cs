@@ -53,5 +53,16 @@ namespace FitRaspi
                 MessageBox.Show("Fail to connect to database");
             }
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_calc_age_Click(object sender, EventArgs e)
+        {
+            int age = Cl_Athlete.calc_age(mC_birthdate.SelectionRange.Start);
+            MessageBox.Show("Digga, du biste " + age + " Jahre alt!");
+        }
     }
 }
