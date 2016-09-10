@@ -67,20 +67,30 @@ namespace FitRaspi
 
         private void btn_calc_kfa_Click(object sender, EventArgs e)
         {
-            double stomach = Convert.ToDouble(tB_stomach.Text); // das hier war wohl auch nicht die cleverste Lösung #ichbinimmernochdumm
-            double neck = Convert.ToDouble(tB_neck.Text);
-            double height = Convert.ToDouble(tB_height.Text);
-            double waist = Convert.ToDouble(tB_waist.Text);
+            try
+            {
+                double stomach = Convert.ToDouble(tB_stomach.Text); // das hier war wohl auch nicht die cleverste Lösung #ichbinimmernochdumm
+                double neck = Convert.ToDouble(tB_neck.Text);
+                double height = Convert.ToDouble(tB_height.Text);
+                double waist = Convert.ToDouble(tB_waist.Text);
 
-            if (rB_male.Checked)
-            {
-                double kfa = Cl_Athlete.calc_kfa(stomach, neck, height);
-                MessageBox.Show("Digga, dein KFA liegt bei " + kfa + " %!");
+                if (rB_male.Checked)
+                {
+                    double kfa = Cl_Athlete.calc_kfa(stomach, neck, height);
+                    MessageBox.Show("Digga, dein KFA liegt bei " + kfa + " %!");
+                }
+                else if (rB_female.Checked)
+                {
+                    double kfa = Cl_Athlete.calc_kfa(stomach, neck, height, waist);
+                    MessageBox.Show("Diggi, dein KFA liegt bei " + kfa + " %!");
+                }
+                else
+                    MessageBox.Show("Ey Digga, weißt du nicht, ob du männlich oder weiblich bist?");
             }
-            else
+
+            catch
             {
-                double kfa = Cl_Athlete.calc_kfa(stomach, neck, height, waist);
-                MessageBox.Show("Diggi, dein KFA liegt bei " + kfa + " %!");
+                MessageBox.Show("Es sind nicht alle Felder ausgefüllt!");
             }
         }
     }
