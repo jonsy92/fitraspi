@@ -80,13 +80,13 @@ namespace FitRaspi
 
         public static int calc_age(DateTime birthday)
         {
-            int years = DateTime.Now.Year - birthday.Year;
-            birthday = birthday.AddYears(years);
+            int age = DateTime.Now.Year - birthday.Year;
+            birthday = birthday.AddYears(age);
             if (DateTime.Now.CompareTo(birthday) < 0)
             {
-                years--;
+                age--;
             }
-            return (years);
+            return (age);
         }
     }
 }
