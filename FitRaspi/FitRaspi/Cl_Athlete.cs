@@ -262,6 +262,15 @@ namespace FitRaspi
             }
             return (age);
         }
-        // Hier musste mir leider Helfen #ichbindumm 
+       public void set_age(DateTime birthday)
+        {
+            int age = DateTime.Now.Year - birthday.Year;
+            birthday = birthday.AddYears(age);
+            if (DateTime.Now.CompareTo(birthday) < 0)
+            {
+                age--;
+            }
+            this.age = age;
+        }
     }
 }
