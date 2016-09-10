@@ -64,5 +64,24 @@ namespace FitRaspi
             int age = Cl_Athlete.calc_age(mC_birthdate.SelectionRange.Start);
             MessageBox.Show("Digga, du biste " + age + " Jahre alt!");
         }
+
+        private void btn_calc_kfa_Click(object sender, EventArgs e)
+        {
+            double stomach = Convert.ToDouble(tB_stomach.Text); // das hier war wohl auch nicht die cleverste Lösung #ichbinimmernochdumm
+            double neck = Convert.ToDouble(tB_neck.Text);
+            double height = Convert.ToDouble(tB_height.Text);
+            double waist = Convert.ToDouble(tB_waist.Text);
+
+            if (rB_male.Checked)
+            {
+                double kfa = Cl_Athlete.calc_kfa(stomach, neck, height);
+                MessageBox.Show("Digga, dein KFA liegt bei " + kfa + " %!");
+            }
+            else
+            {
+                double kfa = Cl_Athlete.calc_kfa(stomach, neck, height, waist);
+                MessageBox.Show("Diggi, dein KFA liegt bei " + kfa + " %!");
+            }
+        }
     }
 }

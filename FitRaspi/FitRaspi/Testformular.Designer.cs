@@ -34,9 +34,25 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_calc_age = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_calc_ffmi = new System.Windows.Forms.Button();
+            this.btn_calc_ffm = new System.Windows.Forms.Button();
+            this.btn_calc_kfa = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.mC_birthdate = new System.Windows.Forms.MonthCalendar();
+            this.lbl_waist = new System.Windows.Forms.Label();
+            this.lbl_stomach = new System.Windows.Forms.Label();
+            this.lbl_weight = new System.Windows.Forms.Label();
+            this.lbl_neck = new System.Windows.Forms.Label();
+            this.lbl_height = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.mC_birthdate = new System.Windows.Forms.MonthCalendar();
+            this.tB_height = new System.Windows.Forms.TextBox();
+            this.tB_weight = new System.Windows.Forms.TextBox();
+            this.tB_neck = new System.Windows.Forms.TextBox();
+            this.tB_stomach = new System.Windows.Forms.TextBox();
+            this.tB_waist = new System.Windows.Forms.TextBox();
+            this.rB_male = new System.Windows.Forms.RadioButton();
+            this.rB_female = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,7 +92,7 @@
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(23, 379);
+            this.btn_close.Location = new System.Drawing.Point(23, 377);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(177, 77);
             this.btn_close.TabIndex = 4;
@@ -87,7 +103,7 @@
             // btn_calc_age
             // 
             this.btn_calc_age.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_calc_age.Location = new System.Drawing.Point(23, 105);
+            this.btn_calc_age.Location = new System.Drawing.Point(23, 101);
             this.btn_calc_age.Name = "btn_calc_age";
             this.btn_calc_age.Size = new System.Drawing.Size(177, 77);
             this.btn_calc_age.TabIndex = 5;
@@ -98,6 +114,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel2.Controls.Add(this.btn_calc_ffmi);
+            this.panel2.Controls.Add(this.btn_calc_ffm);
+            this.panel2.Controls.Add(this.btn_calc_kfa);
             this.panel2.Controls.Add(this.btn_sqlconnection);
             this.panel2.Controls.Add(this.btn_calc_age);
             this.panel2.Controls.Add(this.btn_close);
@@ -106,9 +125,53 @@
             this.panel2.Size = new System.Drawing.Size(558, 475);
             this.panel2.TabIndex = 3;
             // 
+            // btn_calc_ffmi
+            // 
+            this.btn_calc_ffmi.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_calc_ffmi.Location = new System.Drawing.Point(295, 193);
+            this.btn_calc_ffmi.Name = "btn_calc_ffmi";
+            this.btn_calc_ffmi.Size = new System.Drawing.Size(177, 77);
+            this.btn_calc_ffmi.TabIndex = 8;
+            this.btn_calc_ffmi.Text = "Calculate my FFMI";
+            this.btn_calc_ffmi.UseVisualStyleBackColor = true;
+            // 
+            // btn_calc_ffm
+            // 
+            this.btn_calc_ffm.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_calc_ffm.Location = new System.Drawing.Point(23, 285);
+            this.btn_calc_ffm.Name = "btn_calc_ffm";
+            this.btn_calc_ffm.Size = new System.Drawing.Size(177, 77);
+            this.btn_calc_ffm.TabIndex = 7;
+            this.btn_calc_ffm.Text = "Calculate my FFM";
+            this.btn_calc_ffm.UseVisualStyleBackColor = true;
+            // 
+            // btn_calc_kfa
+            // 
+            this.btn_calc_kfa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_calc_kfa.Location = new System.Drawing.Point(23, 193);
+            this.btn_calc_kfa.Name = "btn_calc_kfa";
+            this.btn_calc_kfa.Size = new System.Drawing.Size(177, 77);
+            this.btn_calc_kfa.TabIndex = 6;
+            this.btn_calc_kfa.Text = "Calculate my KFA";
+            this.btn_calc_kfa.UseVisualStyleBackColor = true;
+            this.btn_calc_kfa.Click += new System.EventHandler(this.btn_calc_kfa_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.rB_female);
+            this.panel3.Controls.Add(this.rB_male);
+            this.panel3.Controls.Add(this.tB_waist);
+            this.panel3.Controls.Add(this.tB_stomach);
+            this.panel3.Controls.Add(this.tB_neck);
+            this.panel3.Controls.Add(this.tB_weight);
+            this.panel3.Controls.Add(this.tB_height);
+            this.panel3.Controls.Add(this.lbl_waist);
+            this.panel3.Controls.Add(this.lbl_stomach);
+            this.panel3.Controls.Add(this.lbl_weight);
+            this.panel3.Controls.Add(this.lbl_neck);
+            this.panel3.Controls.Add(this.lbl_height);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.mC_birthdate);
             this.panel3.Location = new System.Drawing.Point(12, 128);
@@ -116,11 +179,55 @@
             this.panel3.Size = new System.Drawing.Size(467, 475);
             this.panel3.TabIndex = 6;
             // 
-            // mC_birthdate
+            // lbl_waist
             // 
-            this.mC_birthdate.Location = new System.Drawing.Point(9, 20);
-            this.mC_birthdate.Name = "mC_birthdate";
-            this.mC_birthdate.TabIndex = 1;
+            this.lbl_waist.AutoSize = true;
+            this.lbl_waist.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_waist.Location = new System.Drawing.Point(56, 396);
+            this.lbl_waist.Name = "lbl_waist";
+            this.lbl_waist.Size = new System.Drawing.Size(43, 13);
+            this.lbl_waist.TabIndex = 8;
+            this.lbl_waist.Text = "Waist:";
+            // 
+            // lbl_stomach
+            // 
+            this.lbl_stomach.AutoSize = true;
+            this.lbl_stomach.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_stomach.Location = new System.Drawing.Point(56, 354);
+            this.lbl_stomach.Name = "lbl_stomach";
+            this.lbl_stomach.Size = new System.Drawing.Size(60, 13);
+            this.lbl_stomach.TabIndex = 7;
+            this.lbl_stomach.Text = "Stomach:";
+            // 
+            // lbl_weight
+            // 
+            this.lbl_weight.AutoSize = true;
+            this.lbl_weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_weight.Location = new System.Drawing.Point(56, 270);
+            this.lbl_weight.Name = "lbl_weight";
+            this.lbl_weight.Size = new System.Drawing.Size(51, 13);
+            this.lbl_weight.TabIndex = 6;
+            this.lbl_weight.Text = "Weight:";
+            // 
+            // lbl_neck
+            // 
+            this.lbl_neck.AutoSize = true;
+            this.lbl_neck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neck.Location = new System.Drawing.Point(56, 312);
+            this.lbl_neck.Name = "lbl_neck";
+            this.lbl_neck.Size = new System.Drawing.Size(41, 13);
+            this.lbl_neck.TabIndex = 5;
+            this.lbl_neck.Text = "Neck:";
+            // 
+            // lbl_height
+            // 
+            this.lbl_height.AutoSize = true;
+            this.lbl_height.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_height.Location = new System.Drawing.Point(56, 228);
+            this.lbl_height.Name = "lbl_height";
+            this.lbl_height.Size = new System.Drawing.Size(48, 13);
+            this.lbl_height.TabIndex = 3;
+            this.lbl_height.Text = "Height:";
             // 
             // label1
             // 
@@ -131,6 +238,79 @@
             this.label1.Size = new System.Drawing.Size(75, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Birthdate";
+            // 
+            // mC_birthdate
+            // 
+            this.mC_birthdate.Location = new System.Drawing.Point(9, 20);
+            this.mC_birthdate.Name = "mC_birthdate";
+            this.mC_birthdate.TabIndex = 1;
+            // 
+            // tB_height
+            // 
+            this.tB_height.Location = new System.Drawing.Point(183, 225);
+            this.tB_height.Name = "tB_height";
+            this.tB_height.Size = new System.Drawing.Size(100, 20);
+            this.tB_height.TabIndex = 11;
+            // 
+            // tB_weight
+            // 
+            this.tB_weight.Location = new System.Drawing.Point(183, 267);
+            this.tB_weight.Name = "tB_weight";
+            this.tB_weight.Size = new System.Drawing.Size(100, 20);
+            this.tB_weight.TabIndex = 12;
+            // 
+            // tB_neck
+            // 
+            this.tB_neck.Location = new System.Drawing.Point(183, 309);
+            this.tB_neck.Name = "tB_neck";
+            this.tB_neck.Size = new System.Drawing.Size(100, 20);
+            this.tB_neck.TabIndex = 13;
+            // 
+            // tB_stomach
+            // 
+            this.tB_stomach.Location = new System.Drawing.Point(183, 351);
+            this.tB_stomach.Name = "tB_stomach";
+            this.tB_stomach.Size = new System.Drawing.Size(100, 20);
+            this.tB_stomach.TabIndex = 14;
+            // 
+            // tB_waist
+            // 
+            this.tB_waist.Location = new System.Drawing.Point(183, 393);
+            this.tB_waist.Name = "tB_waist";
+            this.tB_waist.Size = new System.Drawing.Size(100, 20);
+            this.tB_waist.TabIndex = 15;
+            // 
+            // rB_male
+            // 
+            this.rB_male.AutoSize = true;
+            this.rB_male.Location = new System.Drawing.Point(302, 51);
+            this.rB_male.Name = "rB_male";
+            this.rB_male.Size = new System.Drawing.Size(47, 17);
+            this.rB_male.TabIndex = 16;
+            this.rB_male.TabStop = true;
+            this.rB_male.Text = "male";
+            this.rB_male.UseVisualStyleBackColor = true;
+            // 
+            // rB_female
+            // 
+            this.rB_female.AutoSize = true;
+            this.rB_female.Location = new System.Drawing.Point(302, 89);
+            this.rB_female.Name = "rB_female";
+            this.rB_female.Size = new System.Drawing.Size(56, 17);
+            this.rB_female.TabIndex = 17;
+            this.rB_female.TabStop = true;
+            this.rB_female.Text = "female";
+            this.rB_female.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(217, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Select:";
             // 
             // Testformular
             // 
@@ -161,5 +341,21 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MonthCalendar mC_birthdate;
+        private System.Windows.Forms.Button btn_calc_ffmi;
+        private System.Windows.Forms.Button btn_calc_ffm;
+        private System.Windows.Forms.Button btn_calc_kfa;
+        private System.Windows.Forms.Label lbl_height;
+        private System.Windows.Forms.Label lbl_waist;
+        private System.Windows.Forms.Label lbl_stomach;
+        private System.Windows.Forms.Label lbl_weight;
+        private System.Windows.Forms.Label lbl_neck;
+        private System.Windows.Forms.TextBox tB_waist;
+        private System.Windows.Forms.TextBox tB_stomach;
+        private System.Windows.Forms.TextBox tB_neck;
+        private System.Windows.Forms.TextBox tB_weight;
+        private System.Windows.Forms.TextBox tB_height;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton rB_female;
+        private System.Windows.Forms.RadioButton rB_male;
     }
 }

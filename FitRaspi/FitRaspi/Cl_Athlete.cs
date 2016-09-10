@@ -23,6 +23,150 @@ namespace FitRaspi
         private double ffm;
         private double ffmi;
         private double kfa;
+        private int age;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Firstname
+        {
+            get
+            {
+                return firstname;
+            }
+
+            set
+            {
+                firstname = value;
+            }
+        }
+
+        public DateTime Birthday
+        {
+            get
+            {
+                return birthday;
+            }
+
+            set
+            {
+                birthday = value;
+            }
+        }
+
+        public string Sex
+        {
+            get
+            {
+                return sex;
+            }
+
+            set
+            {
+                sex = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+
+            set
+            {
+                email = value;
+            }
+        }
+
+        public double Weight
+        {
+            get
+            {
+                return weight;
+            }
+
+            set
+            {
+                weight = value;
+            }
+        }
+
+        public double Height
+        {
+            get
+            {
+                return height;
+            }
+
+            set
+            {
+                height = value;
+            }
+        }
+
+        public double Ffm
+        {
+            get
+            {
+                return ffm;
+            }
+
+            set
+            {
+                ffm = value;
+            }
+        }
+
+        public double Ffmi
+        {
+            get
+            {
+                return ffmi;
+            }
+
+            set
+            {
+                ffmi = value;
+            }
+        }
+
+        public double Kfa
+        {
+            get
+            {
+                return kfa;
+            }
+
+            set
+            {
+                kfa = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                age = value;
+            }
+        }
 
         public Cl_Athlete (string name, string firstname, string email, string sex, double weight, double height)
         {
@@ -34,13 +178,14 @@ namespace FitRaspi
             this.height = height;
         }
 
-        public Cl_Athlete (string name, string firstname, string email, string sex, DateTime birthday, double weight, double height, double ffm, double ffmi, double kfa)
+        public Cl_Athlete (string name, string firstname, string email, string sex, DateTime birthday, int age, double weight, double height, double ffm, double ffmi, double kfa)
         {
             this.name = name;
             this.firstname = firstname;
             this.email = email;
             this.sex = sex;
             this.birthday = birthday;
+            this.age = age;
             this.weight = weight;
             this.height = height;
             this.ffm = ffm;
@@ -56,8 +201,8 @@ namespace FitRaspi
             double result;
 
             result = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
-          
-            return (result);
+
+            return (Math.Round(result, 2));
         }
 
         public void set_kfa(double stomach, double neck, double height)
@@ -65,16 +210,16 @@ namespace FitRaspi
             this.kfa = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
         }
 
-        public  static double calc_kfa(double stomach, double neck, double height, double waist, double butt)
+        public  static double calc_kfa(double stomach, double neck, double height, double waist)
         {
             double result;
 
             result = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
 
-            return (result);
+            return (Math.Round(result, 2));
         }
 
-        public void set_kfa(double stomach, double neck, double height, double waist, double butt)
+        public void set_kfa(double stomach, double neck, double height, double waist)
         {
             this.kfa = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
         }
@@ -85,7 +230,7 @@ namespace FitRaspi
 
             result = weight * (100 - kfa) / 100;
 
-            return (result);
+            return (Math.Round(result, 2));
         }
 
         public void set_ffm(double weight, double kfa)
@@ -99,7 +244,7 @@ namespace FitRaspi
 
             result = ffm / (height * height) + 6.3 * (1.8 - height);
 
-            return (result);
+            return (Math.Round(result, 2));
         }
 
         public void set_ffmi(double height,double ffm)
@@ -117,5 +262,6 @@ namespace FitRaspi
             }
             return (age);
         }
+        // Hier musste mir leider Helfen #ichbindumm 
     }
 }
