@@ -8,9 +8,11 @@ namespace FitRaspi
 {
     class Cl_User
     {
+
         private string userid;
         private string password;
         private string username;
+
 
         public Cl_User(string username,string password)
         {
@@ -28,6 +30,7 @@ namespace FitRaspi
         {
             return ("Select password...");
         }
+
 
         public bool check_password(string password)
         {

@@ -44,6 +44,8 @@ namespace FitRaspi
             return (result);
         }
 
+       
+
         public  double calc_kfa(double stomach, double neck, double height, double waist, double butt)
         {
             double result;
@@ -69,6 +71,11 @@ namespace FitRaspi
             result = ffm / (height * height) + 6.3 * (1.8 - height);
 
             return (result);
+        }
+
+        public void set_ffmi(double height,double ffm)
+        {
+            this.ffmi = ffm / (height * height) + 6.3 * (1.8 - height);
         }
 
         public static int calc_age(DateTime birthday)
