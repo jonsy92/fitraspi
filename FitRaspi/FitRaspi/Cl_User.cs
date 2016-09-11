@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace FitRaspi
 {
@@ -13,6 +14,8 @@ namespace FitRaspi
         private string password;
         private string username;
 
+        
+
 
         public Cl_User(string username,string password)
         {
@@ -22,7 +25,18 @@ namespace FitRaspi
 
         public string get_uid(string username)
         {
-            return ("Select UID...");
+            MySqlConnection connection = Cl_MySQL.getMySQLConnection();
+            Cl_MySQL.OpenMySQLConnection(connection);
+
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT UID WHERE Name = " + username + "";
+
+            MySqlDataReader Reader;
+            Reader = command.ExecuteReader();
+
+            this.userid = Reader.GetValue(0).ToString();
+
+            return (this.userid);
         }
 
 

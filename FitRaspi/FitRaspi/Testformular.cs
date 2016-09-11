@@ -46,7 +46,8 @@ namespace FitRaspi
         {
             try
             {
-                Cl_MySQL.OpenSQLConnection();
+                Cl_MySQL.getMySQLConnection("localhost","root","","fit-raspi");
+                MessageBox.Show("You are connected to the database: FIT-RASPI");
             }
             catch
             {
@@ -84,14 +85,22 @@ namespace FitRaspi
                     double kfa = Cl_Athlete.calc_kfa(stomach, neck, height, waist);
                     MessageBox.Show("Diggi, dein KFA liegt bei " + kfa + " %!");
                 }
-                else
-                    MessageBox.Show("Ey Digga, weißt du nicht, ob du männlich oder weiblich bist?");
             }
 
             catch
             {
                 MessageBox.Show("Es sind nicht alle Felder ausgefüllt!");
             }
+        }
+
+        private void btn_calc_ffm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
