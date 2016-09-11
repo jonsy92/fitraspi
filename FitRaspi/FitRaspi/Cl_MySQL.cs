@@ -14,6 +14,10 @@ namespace FitRaspi
                 connection.Open();
         }
 
+        public static void CloseMySQLConnection(MySqlConnection connection)
+        {
+            connection.Close();
+        }
 
         public static MySqlConnection getMySQLConnection()
         {

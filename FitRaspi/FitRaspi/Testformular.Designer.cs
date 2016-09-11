@@ -53,6 +53,7 @@
             this.lbl_height = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mC_birthdate = new System.Windows.Forms.MonthCalendar();
+            this.btn_close_database_connection = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -115,6 +116,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel2.Controls.Add(this.btn_close_database_connection);
             this.panel2.Controls.Add(this.btn_calc_ffmi);
             this.panel2.Controls.Add(this.btn_calc_ffm);
             this.panel2.Controls.Add(this.btn_calc_kfa);
@@ -315,6 +317,17 @@
             this.mC_birthdate.Name = "mC_birthdate";
             this.mC_birthdate.TabIndex = 1;
             // 
+            // btn_close_database_connection
+            // 
+            this.btn_close_database_connection.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close_database_connection.Location = new System.Drawing.Point(162, 4);
+            this.btn_close_database_connection.Name = "btn_close_database_connection";
+            this.btn_close_database_connection.Size = new System.Drawing.Size(153, 53);
+            this.btn_close_database_connection.TabIndex = 9;
+            this.btn_close_database_connection.Text = "Disconnect Database";
+            this.btn_close_database_connection.UseVisualStyleBackColor = true;
+            this.btn_close_database_connection.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Testformular
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,5 +373,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rB_female;
         private System.Windows.Forms.RadioButton rB_male;
+        private System.Windows.Forms.Button btn_close_database_connection;
     }
 }

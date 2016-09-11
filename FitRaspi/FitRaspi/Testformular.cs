@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace FitRaspi
 {
     public partial class Testformular : Form
     {
+        MySqlConnection connection;
+
         public Testformular()
         {
             InitializeComponent();
@@ -46,7 +49,9 @@ namespace FitRaspi
         {
             try
             {
-                Cl_MySQL.getMySQLConnection("localhost","root","","fit-raspi");
+               connection = Cl_MySQL.getMySQLConnection("localhost","root","","fit-raspi");
+               Cl_MySQL.OpenMySQLConnection(connection);
+
                 MessageBox.Show("You are connected to the database: FIT-RASPI");
             }
             catch
@@ -101,6 +106,19 @@ namespace FitRaspi
         private void label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cl_MySQL.CloseMySQLConnection(connection);
+                MessageBox.Show("You are disconnected from the database!");
+            }
+            catch
+            {
+                MessageBox.Show("No database-connection exists!");
+            }
         }
     }
 }
