@@ -8,14 +8,10 @@ namespace FitRaspi
 {
     class Cl_Athlete
     {
-
-       
-
-
-        // Bitte Klassen Properties anlegen
+        // Property Definition--------------------------------------------------------------------------------------------------------
         private string name;
         private string firstname;
-        private DateTime birthday; // Hab den Datentyp in datetime geändert
+        private DateTime birthday; 
         private string sex;
         private string email;
         private double weight;
@@ -24,7 +20,15 @@ namespace FitRaspi
         private double ffmi;
         private double kfa;
         private int age;
+        //-------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+        //Setter and Getter--------------------------------------------------------------------------------------------------------
         public string Name
         {
             get
@@ -167,7 +171,13 @@ namespace FitRaspi
                 age = value;
             }
         }
+        //-------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+        // Constructors------------------------------------------------------------------------------------------------------------
         public Cl_Athlete (string name, string firstname, string email, string sex, double weight, double height)
         {
             this.name = name;
@@ -194,8 +204,15 @@ namespace FitRaspi
         }
 
         public Cl_Athlete()
-        { }
+        {
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+        //Static Methods and Functions---------------------------------------------------------------------------------------------
         public static double calc_kfa(double stomach, double neck, double height)
         {
             double result;
@@ -205,23 +222,13 @@ namespace FitRaspi
             return (Math.Round(result, 2));
         }
 
-        public void set_kfa(double stomach, double neck, double height)
-        {
-            this.kfa = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
-        }
-
-        public  static double calc_kfa(double stomach, double neck, double height, double waist)
+        public static double calc_kfa(double stomach, double neck, double height, double waist)
         {
             double result;
 
             result = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
 
             return (Math.Round(result, 2));
-        }
-
-        public void set_kfa(double stomach, double neck, double height, double waist)
-        {
-            this.kfa = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
         }
 
         public static double calc_ffm(double weight, double kfa)
@@ -233,11 +240,6 @@ namespace FitRaspi
             return (Math.Round(result, 2));
         }
 
-        public void set_ffm(double weight, double kfa)
-        {
-            this.ffm = weight * (100 - kfa) / 100;
-        }
-
         public static double calc_ffmi(double height, double ffm)
         {
             double result;
@@ -245,11 +247,6 @@ namespace FitRaspi
             result = ffm / (height * height) + 6.3 * (1.8 - height);
 
             return (Math.Round(result, 2));
-        }
-
-        public void set_ffmi(double height,double ffm)
-        {
-            this.ffmi = ffm / (height * height) + 6.3 * (1.8 - height);
         }
 
         public static int calc_age(DateTime birthday)
@@ -262,7 +259,34 @@ namespace FitRaspi
             }
             return (age);
         }
-       public void set_age(DateTime birthday)
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+        //Class Methods and Functions---------------------------------------------------------------------------------------------
+        public void set_kfa(double stomach, double neck, double height)
+        {
+            this.kfa = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
+        }
+       
+        public void set_kfa(double stomach, double neck, double height, double waist)
+        {
+            this.kfa = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
+        }
+
+        public void set_ffm(double weight, double kfa)
+        {
+            this.ffm = weight * (100 - kfa) / 100;
+        }
+      
+        public void set_ffmi(double height,double ffm)
+        {
+            this.ffmi = ffm / (height * height) + 6.3 * (1.8 - height);
+        }
+
+        public void set_age(DateTime birthday)
         {
             int age = DateTime.Now.Year - birthday.Year;
             birthday = birthday.AddYears(age);
@@ -272,5 +296,7 @@ namespace FitRaspi
             }
             this.age = age;
         }
+        //-------------------------------------------------------------------------------------------------------------------------
+
     }
 }
