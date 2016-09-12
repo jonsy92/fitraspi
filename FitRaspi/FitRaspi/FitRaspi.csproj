@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Cl_Athlete.cs" />
     <Compile Include="Cl_MySQL.cs" />
+    <Compile Include="Cl_StrengthStats.cs" />
     <Compile Include="Cl_Training.cs" />
     <Compile Include="Cl_User.cs" />
     <Compile Include="Program.cs" />

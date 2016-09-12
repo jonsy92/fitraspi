@@ -1,0 +1,198 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FitRaspi
+{
+    class Cl_StrengthStats
+    {
+        //Property Definition -----------------------------------------------------------------------------------------------------
+        private double squats;
+        private double bench_press;
+        private double cross_lift;
+        private double barbell_rowing;
+        private double pull_ups;
+        private double military_press;
+        private double one_repeat_max;
+        private double repeats_per_weight;
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+        //Setter und Getter--------------------------------------------------------------------------------------------------------
+        public double Squats
+        {
+            get
+            {
+                return squats;
+            }
+
+            set
+            {
+                squats = value;
+            }
+        }
+
+        public double Bench_press
+        {
+            get
+            {
+                return bench_press;
+            }
+
+            set
+            {
+                bench_press = value;
+            }
+        }
+
+        public double Cross_lift
+        {
+            get
+            {
+                return cross_lift;
+            }
+
+            set
+            {
+                cross_lift = value;
+            }
+        }
+
+        public double Barbell_rowing
+        {
+            get
+            {
+                return barbell_rowing;
+            }
+
+            set
+            {
+                barbell_rowing = value;
+            }
+        }
+
+        public double Pull_ups
+        {
+            get
+            {
+                return pull_ups;
+            }
+
+            set
+            {
+                pull_ups = value;
+            }
+        }
+
+        public double Military_press
+        {
+            get
+            {
+                return military_press;
+            }
+
+            set
+            {
+                military_press = value;
+            }
+        }
+
+        public double One_repeat_max
+        {
+            get
+            {
+                return one_repeat_max;
+            }
+
+            set
+            {
+                one_repeat_max = value;
+            }
+        }
+
+        public double Repeats_per_weight
+        {
+            get
+            {
+                return repeats_per_weight;
+            }
+
+            set
+            {
+                repeats_per_weight = value;
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+        // Constructors------------------------------------------------------------------------------------------------------------
+        public Cl_StrengthStats (double squats, double bench_press, double barbell_rowing, double cross_lift, double military_press, double pull_ups)
+        {
+            this.squats = squats;
+            this.bench_press = bench_press;
+            this.barbell_rowing = barbell_rowing;
+            this.cross_lift = cross_lift;
+            this.military_press = military_press;
+            this.pull_ups = pull_ups;
+        }
+
+        public Cl_StrengthStats()
+        {
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+        //Static Methods and Functions---------------------------------------------------------------------------------------------
+        public static double calc_one_repeat_max(double weight, double repeats)
+        {
+            double result;
+
+            result = weight / (1.0278 - 0.0278 * repeats);
+
+            return (Math.Round(result, 2));
+        }
+
+        public static double calc_repeats_per_weight(double weight, double one_repeat_max)
+        {
+            double result;
+
+            result = 36.97 - weight / one_repeat_max;
+
+            return (Math.Round(result, 2));
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+        //Class Methods and Functions---------------------------------------------------------------------------------------------
+        public void set_one_repeat_max(double weight, double repeats)
+        {
+            this.one_repeat_max = weight / (1.0278 - 0.0278 * repeats);
+        }
+
+        public void set_repeats_per_weight(double weight, double one_repeat_max)
+        {
+            this.repeats_per_weight = 36.97 - weight / one_repeat_max;
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+
+    }
+}
