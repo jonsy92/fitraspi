@@ -21,7 +21,7 @@ namespace FitRaspi
 
         //-------------------------------------------------------------------------------------------------------------------------
 
-
+        
         // Constructors------------------------------------------------------------------------------------------------------------
         public Cl_StrengthStats(double squats, double bench_press, double barbell_rowing, double cross_lift, double military_press, double pull_ups)
         {
