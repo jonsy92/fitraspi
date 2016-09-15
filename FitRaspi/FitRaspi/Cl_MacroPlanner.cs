@@ -9,17 +9,17 @@ namespace FitRaspi
     class Cl_MacroPlanner
     {
         //Property Definition -----------------------------------------------------------------------------------------------------
-        double kcal;
-        double protein;
-        double fat;
-        double carbohxdrates;
+        int kcal;
+        int protein;
+        int fat;
+        int carbohxdrates;
         //-------------------------------------------------------------------------------------------------------------------------
 
 
 
 
         // Constructors------------------------------------------------------------------------------------------------------------
-        public Cl_MacroPlanner(double kcal, double protein, double fat, double carbohydrates)
+        public Cl_MacroPlanner(int kcal, int protein, int fat, int carbohydrates)
         {
             this.kcal = kcal;
             this.protein = protein;
@@ -38,7 +38,7 @@ namespace FitRaspi
 
 
         //Setter und Getter--------------------------------------------------------------------------------------------------------
-        public double Kcal
+        public int Kcal
         {
             get
             {
@@ -51,7 +51,7 @@ namespace FitRaspi
             }
         }
 
-        public double Protein
+        public int Protein
         {
             get
             {
@@ -64,7 +64,7 @@ namespace FitRaspi
             }
         }
 
-        public double Fat
+        public int Fat
         {
             get
             {
@@ -77,7 +77,7 @@ namespace FitRaspi
             }
         }
 
-        public double Carbohxdrates
+        public int Carbohxdrates
         {
             get
             {
@@ -90,5 +90,29 @@ namespace FitRaspi
             }
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+        // Static Methods and Functions----------------------------------------------------------------------------------------------
+        public static Cl_MacroPlanner calc_macro(int kcal, Cl_Athlete athlete)
+        {
+            double weight = athlete.Weight;
+
+            int protein = Convert.ToInt32(weight * 2);
+
+            int fat = Convert.ToInt32(weight * 0.8);
+
+            int carbohydrates = Convert.ToInt32((kcal - (protein * 4) - (fat * 9)) / 4);
+
+            Cl_MacroPlanner macros = new Cl_MacroPlanner(kcal, protein, fat, carbohydrates);
+
+            return macros;
+        }
+
+
     }
 }
+
