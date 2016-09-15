@@ -11,16 +11,30 @@ namespace FitRaspi
         //Property Definition -----------------------------------------------------------------------------------------------------
         private double squats;
         private double bench_press;
-        private double cross_lift;
+        private double dead_lift; 
         private double barbell_rowing;
         private double pull_ups;
         private double military_press;
-        private double one_repeat_max;
+        private double one_repeat_max; // Welchen Wert möchtest du hier an der Klasse oder für die Datenbank speichern?
         private double repeats_per_weight;
         //-------------------------------------------------------------------------------------------------------------------------
 
 
+        // Constructors------------------------------------------------------------------------------------------------------------
+        public Cl_StrengthStats(double squats, double bench_press, double barbell_rowing, double cross_lift, double military_press, double pull_ups)
+        {
+            this.squats = squats;
+            this.bench_press = bench_press;
+            this.barbell_rowing = barbell_rowing;
+            this.dead_lift = cross_lift;
+            this.military_press = military_press;
+            this.pull_ups = pull_ups;
+        }
 
+        public Cl_StrengthStats()
+        {
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -56,12 +70,12 @@ namespace FitRaspi
         {
             get
             {
-                return cross_lift;
+                return dead_lift;
             }
 
             set
             {
-                cross_lift = value;
+                dead_lift = value;
             }
         }
 
@@ -137,21 +151,7 @@ namespace FitRaspi
 
 
 
-        // Constructors------------------------------------------------------------------------------------------------------------
-        public Cl_StrengthStats (double squats, double bench_press, double barbell_rowing, double cross_lift, double military_press, double pull_ups)
-        {
-            this.squats = squats;
-            this.bench_press = bench_press;
-            this.barbell_rowing = barbell_rowing;
-            this.cross_lift = cross_lift;
-            this.military_press = military_press;
-            this.pull_ups = pull_ups;
-        }
-
-        public Cl_StrengthStats()
-        {
-        }
-        //-------------------------------------------------------------------------------------------------------------------------
+      
 
 
 
@@ -173,7 +173,7 @@ namespace FitRaspi
 
             result = 36.97 - weight / one_repeat_max;
 
-            return (Math.Round(result, 2));
+            return (Math.Round(result, 2)); // Return bitte ganzzahlig :)
         }
         //-------------------------------------------------------------------------------------------------------------------------
 
