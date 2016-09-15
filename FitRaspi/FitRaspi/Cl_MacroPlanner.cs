@@ -12,7 +12,7 @@ namespace FitRaspi
         int kcal;
         int protein;
         int fat;
-        int carbohxdrates;
+        int carbohydrates;
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -24,7 +24,7 @@ namespace FitRaspi
             this.kcal = kcal;
             this.protein = protein;
             this.fat = fat;
-            this.carbohxdrates = carbohydrates;
+            this.carbohydrates = carbohydrates;
         }
 
         public Cl_MacroPlanner()
@@ -81,12 +81,12 @@ namespace FitRaspi
         {
             get
             {
-                return carbohxdrates;
+                return carbohydrates;
             }
 
             set
             {
-                carbohxdrates = value;
+                carbohydrates = value;
             }
         }
 
