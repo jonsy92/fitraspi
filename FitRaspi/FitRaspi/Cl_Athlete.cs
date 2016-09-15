@@ -20,6 +20,7 @@ namespace FitRaspi
         private double ffmi;
         private double kfa;
         private int age;
+        private string nickname;
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -171,6 +172,20 @@ namespace FitRaspi
                 age = value;
             }
         }
+
+        public string Nickname
+        {
+            get
+            {
+                return nickname;
+            }
+
+            set
+            {
+                nickname = value;
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------
 
 
