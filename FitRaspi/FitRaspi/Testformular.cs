@@ -62,6 +62,8 @@ namespace FitRaspi
 
         private void btn_close_Click(object sender, EventArgs e)
         {
+            Cl_StrengthStats stats = new Cl_StrengthStats();
+            double 
             Close();
         }
 
