@@ -182,13 +182,15 @@ namespace FitRaspi
             return (Math.Round(result, 2));
         }
 
-        public static double calc_repeats_per_weight(double weight, double one_repeat_max)
+        public static double  calc_repeats_per_weight(double weight, double one_repeat_max)
         {
             double result;
 
             result = 36.97 - weight / one_repeat_max;
 
-            return (Math.Round(result, 0)); // Return bitte ganzzahlig :)
+            Convert.ToInt32(result);
+
+            return result;
         }
 
         public static double calc_weight_per_repeats(double one_repeat_max, double repeats)
