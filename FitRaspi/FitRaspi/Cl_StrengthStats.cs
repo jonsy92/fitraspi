@@ -15,8 +15,10 @@ namespace FitRaspi
         private double barbell_rowing;
         private double pull_ups;
         private double military_press;
-        private double one_repeat_max; // Welchen Wert möchtest du hier an der Klasse oder für die Datenbank speichern?
+        private double one_repeat_max; // Welchen Wert möchtest du hier an der Klasse oder für die Datenbank speichern? Bench Press Wert;)
         private double repeats_per_weight;
+        private double weight_per_repeats;
+
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -144,6 +146,19 @@ namespace FitRaspi
             }
         }
 
+        public double Weight_per_repeats
+        {
+            get
+            {
+                return weight_per_repeats;
+            }
+
+            set
+            {
+                weight_per_repeats = value;
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -151,7 +166,7 @@ namespace FitRaspi
 
 
 
-      
+
 
 
 
@@ -173,7 +188,16 @@ namespace FitRaspi
 
             result = 36.97 - weight / one_repeat_max;
 
-            return (Math.Round(result, 2)); // Return bitte ganzzahlig :)
+            return (Math.Round(result, 0)); // Return bitte ganzzahlig :)
+        }
+
+        public static double calc_weight_per_repeats(double one_repeat_max, double repeats)
+        {
+            double result;
+
+            result = one_repeat_max * (1.0278 - 0.0278 * repeats);
+
+            return (Math.Round(result, 2));
         }
         //-------------------------------------------------------------------------------------------------------------------------
 
@@ -191,6 +215,11 @@ namespace FitRaspi
         public void set_repeats_per_weight(double weight, double one_repeat_max)
         {
             this.repeats_per_weight = 36.97 - weight / one_repeat_max;
+        }
+
+        public void set_weight_per_repeats(double one_repeat_max, double repeats)
+        {
+            this.weight_per_repeats = one_repeat_max * (1.0278 - 0.0278 * repeats);
         }
         //-------------------------------------------------------------------------------------------------------------------------
 
