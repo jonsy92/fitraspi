@@ -112,6 +112,56 @@ namespace FitRaspi
             return macros;
         }
 
+        public static int calc_kcal(int protein, int fat, int carbohydates)
+        {
+            int result;
+
+            result = protein * 4 + fat * 9 + carbohydates * 4;
+
+            return result;
+        }
+
+        public static double calc_kcal_male(Cl_Athlete athlete, Cl_ActivityCalculator activity)
+        {
+            double weight = athlete.Weight;
+
+            double height = athlete.Height;
+
+            int age = athlete.Age;
+
+            double job = activity.Job;
+
+            double sport = activity.Sport;
+
+            double goal = activity.Goal;
+
+            double result;
+
+            result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) + job + sport + goal;
+
+            return result;
+        }
+
+        public static double calc_kcal_female(Cl_Athlete athlete, Cl_ActivityCalculator activity)
+        {
+            double weight = athlete.Weight;
+
+            double height = athlete.Height;
+
+            int age = athlete.Age;
+
+            double job = activity.Job;
+
+            double sport = activity.Sport;
+
+            double goal = activity.Goal;
+
+            double result;
+
+            result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) + job + sport + goal;
+
+            return result;
+        }
     }
 }
 
