@@ -9,8 +9,7 @@ namespace FitRaspi
     class Cl_Athlete
     {
         // Property Definition--------------------------------------------------------------------------------------------------------
-        private string name;
-        private string firstname;
+        private string nickname;
         private DateTime birthday; 
         private string sex;
         private string email;
@@ -20,38 +19,15 @@ namespace FitRaspi
         private double ffmi;
         private double kfa;
         private int age;
-        private string nickname;
+        private int kcal;
+        
+        
         //-------------------------------------------------------------------------------------------------------------------------
 
 
 
         //Setter and Getter--------------------------------------------------------------------------------------------------------
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
-
-        public string Firstname
-        {
-            get
-            {
-                return firstname;
-            }
-
-            set
-            {
-                firstname = value;
-            }
-        }
-
+      
         public DateTime Birthday
         {
             get
@@ -182,6 +158,19 @@ namespace FitRaspi
             }
         }
 
+        public int Kcal
+        {
+            get
+            {
+                return kcal;
+            }
+
+            set
+            {
+                kcal = value;
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -189,20 +178,18 @@ namespace FitRaspi
 
 
         // Constructors------------------------------------------------------------------------------------------------------------
-        public Cl_Athlete (string name, string firstname, string email, string sex, double weight, double height)
+        public Cl_Athlete (string nickname, string firstname, string email, string sex, double weight, double height)
         {
-            this.name = name;
-            this.firstname = firstname;
+            this.nickname = nickname;
             this.email = email;
             this.sex = sex;
             this.weight = weight;
             this.height = height;
         }
 
-        public Cl_Athlete (string name, string firstname, string email, string sex, DateTime birthday, int age, double weight, double height, double ffm, double ffmi, double kfa)
+        public Cl_Athlete (string nickname, string email, string sex, DateTime birthday, int age, double weight, double height, double ffm, double ffmi, double kfa)
         {
-            this.name = name;
-            this.firstname = firstname;
+            this.nickname = nickname;
             this.email = email;
             this.sex = sex;
             this.birthday = birthday;

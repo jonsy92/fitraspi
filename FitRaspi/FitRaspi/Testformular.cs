@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace FitRaspi
 {
@@ -119,6 +120,22 @@ namespace FitRaspi
             {
                 MessageBox.Show("No database-connection exists!");
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e) // test my class
+        {
+            Cl_User jonas = new Cl_User(tB_Nickname.Text);
+
+            try
+            {
+                string userid = jonas.get_uid(jonas.Username);
+                MessageBox.Show("My password is: " + jonas.get_password(userid), "Info");
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

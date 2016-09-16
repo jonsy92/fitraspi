@@ -10,12 +10,16 @@ namespace FitRaspi
     class Cl_User
     {
 
-        private string userid;
-        private string password;
-        private string username;
+         string userid;
+         string password;
+         string username;
 
-        
 
+
+        public Cl_User(string username)
+        {
+            this.username = username;
+        }
 
         public Cl_User(string username,string password)
         {
@@ -28,21 +32,55 @@ namespace FitRaspi
             MySqlConnection connection = Cl_MySQL.getMySQLConnection();
             Cl_MySQL.OpenMySQLConnection(connection);
 
+            MySqlParameter param = new MySqlParameter();
+            param.ParameterName = "@username";
+            param.Value = username;
+
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT UID WHERE Name = " + username + "";
+            command.CommandText = "SELECT UID FROM user WHERE Name = @username  ";
+            command.Parameters.Add(param);
 
-            MySqlDataReader Reader;
-            Reader = command.ExecuteReader();
+            MySqlDataReader reader;
+            reader = command.ExecuteReader();
 
-            this.userid = Reader.GetValue(0).ToString();
+            while(reader.Read())
+            {
+                this.userid = reader.GetValue(0).ToString();
+            }
 
+            Cl_MySQL.CloseMySQLConnection(connection);
+
+            
             return (this.userid);
         }
 
 
         public string get_password(string userid)
         {
-            return ("Select password...");
+            MySqlConnection connection = Cl_MySQL.getMySQLConnection();
+            Cl_MySQL.OpenMySQLConnection(connection);
+
+            MySqlParameter param = new MySqlParameter();
+            param.ParameterName = "@userid";
+            param.Value = userid;
+
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT Passwordtext FROM password WHERE UID = @userid  ";
+            command.Parameters.Add(param);
+
+            MySqlDataReader reader;
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                this.password = reader.GetValue(0).ToString();
+            }
+
+            Cl_MySQL.CloseMySQLConnection(connection);
+
+
+            return (this.password);
+            
         }
 
 

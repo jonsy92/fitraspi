@@ -34,6 +34,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_calc_age = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_close_database_connection = new System.Windows.Forms.Button();
             this.btn_calc_ffmi = new System.Windows.Forms.Button();
             this.btn_calc_ffm = new System.Windows.Forms.Button();
             this.btn_calc_kfa = new System.Windows.Forms.Button();
@@ -53,7 +54,9 @@
             this.lbl_height = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mC_birthdate = new System.Windows.Forms.MonthCalendar();
-            this.btn_close_database_connection = new System.Windows.Forms.Button();
+            this.btn_classtester = new System.Windows.Forms.Button();
+            this.tB_Nickname = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -116,6 +119,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel2.Controls.Add(this.btn_classtester);
             this.panel2.Controls.Add(this.btn_close_database_connection);
             this.panel2.Controls.Add(this.btn_calc_ffmi);
             this.panel2.Controls.Add(this.btn_calc_ffm);
@@ -127,6 +131,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(558, 475);
             this.panel2.TabIndex = 3;
+            // 
+            // btn_close_database_connection
+            // 
+            this.btn_close_database_connection.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close_database_connection.Location = new System.Drawing.Point(162, 4);
+            this.btn_close_database_connection.Name = "btn_close_database_connection";
+            this.btn_close_database_connection.Size = new System.Drawing.Size(153, 53);
+            this.btn_close_database_connection.TabIndex = 9;
+            this.btn_close_database_connection.Text = "Disconnect Database";
+            this.btn_close_database_connection.UseVisualStyleBackColor = true;
+            this.btn_close_database_connection.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_calc_ffmi
             // 
@@ -163,6 +178,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel3.Controls.Add(this.tB_Nickname);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.rB_female);
             this.panel3.Controls.Add(this.rB_male);
@@ -208,6 +225,7 @@
             // rB_male
             // 
             this.rB_male.AutoSize = true;
+            this.rB_male.Checked = true;
             this.rB_male.Location = new System.Drawing.Point(47, 203);
             this.rB_male.Name = "rB_male";
             this.rB_male.Size = new System.Drawing.Size(47, 17);
@@ -222,6 +240,7 @@
             this.tB_waist.Name = "tB_waist";
             this.tB_waist.Size = new System.Drawing.Size(100, 20);
             this.tB_waist.TabIndex = 15;
+            this.tB_waist.Text = "120";
             // 
             // tB_stomach
             // 
@@ -229,6 +248,7 @@
             this.tB_stomach.Name = "tB_stomach";
             this.tB_stomach.Size = new System.Drawing.Size(100, 20);
             this.tB_stomach.TabIndex = 14;
+            this.tB_stomach.Text = "100";
             // 
             // tB_neck
             // 
@@ -236,6 +256,7 @@
             this.tB_neck.Name = "tB_neck";
             this.tB_neck.Size = new System.Drawing.Size(100, 20);
             this.tB_neck.TabIndex = 13;
+            this.tB_neck.Text = "80";
             // 
             // tB_weight
             // 
@@ -243,6 +264,7 @@
             this.tB_weight.Name = "tB_weight";
             this.tB_weight.Size = new System.Drawing.Size(100, 20);
             this.tB_weight.TabIndex = 12;
+            this.tB_weight.Text = "80";
             // 
             // tB_height
             // 
@@ -250,6 +272,7 @@
             this.tB_height.Name = "tB_height";
             this.tB_height.Size = new System.Drawing.Size(100, 20);
             this.tB_height.TabIndex = 11;
+            this.tB_height.Text = "180";
             // 
             // lbl_waist
             // 
@@ -317,16 +340,34 @@
             this.mC_birthdate.Name = "mC_birthdate";
             this.mC_birthdate.TabIndex = 1;
             // 
-            // btn_close_database_connection
+            // btn_classtester
             // 
-            this.btn_close_database_connection.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close_database_connection.Location = new System.Drawing.Point(162, 4);
-            this.btn_close_database_connection.Name = "btn_close_database_connection";
-            this.btn_close_database_connection.Size = new System.Drawing.Size(153, 53);
-            this.btn_close_database_connection.TabIndex = 9;
-            this.btn_close_database_connection.Text = "Disconnect Database";
-            this.btn_close_database_connection.UseVisualStyleBackColor = true;
-            this.btn_close_database_connection.Click += new System.EventHandler(this.button1_Click);
+            this.btn_classtester.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_classtester.Location = new System.Drawing.Point(3, 300);
+            this.btn_classtester.Name = "btn_classtester";
+            this.btn_classtester.Size = new System.Drawing.Size(153, 53);
+            this.btn_classtester.TabIndex = 10;
+            this.btn_classtester.Text = "Test my class";
+            this.btn_classtester.UseVisualStyleBackColor = true;
+            this.btn_classtester.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // tB_Nickname
+            // 
+            this.tB_Nickname.Location = new System.Drawing.Point(271, 280);
+            this.tB_Nickname.Name = "tB_Nickname";
+            this.tB_Nickname.Size = new System.Drawing.Size(100, 20);
+            this.tB_Nickname.TabIndex = 20;
+            this.tB_Nickname.Text = "Jonas";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(198, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nickname:";
             // 
             // Testformular
             // 
@@ -374,5 +415,8 @@
         private System.Windows.Forms.RadioButton rB_female;
         private System.Windows.Forms.RadioButton rB_male;
         private System.Windows.Forms.Button btn_close_database_connection;
+        private System.Windows.Forms.Button btn_classtester;
+        private System.Windows.Forms.TextBox tB_Nickname;
+        private System.Windows.Forms.Label label3;
     }
 }

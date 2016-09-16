@@ -15,7 +15,6 @@ namespace FitRaspi
         private double barbell_rowing;
         private double pull_ups;
         private double military_press;
-        private double one_repeat_max; // Welchen Wert möchtest du hier an der Klasse oder für die Datenbank speichern? Bench Press Wert;)
         private double repeats_per_weight;
         private double weight_per_repeats;
 
@@ -23,12 +22,12 @@ namespace FitRaspi
 
         
         // Constructors------------------------------------------------------------------------------------------------------------
-        public Cl_StrengthStats(double squats, double bench_press, double barbell_rowing, double cross_lift, double military_press, double pull_ups)
+        public Cl_StrengthStats(double squats, double bench_press, double barbell_rowing, double dead_lift, double military_press, double pull_ups)
         {
             this.squats = squats;
             this.bench_press = bench_press;
             this.barbell_rowing = barbell_rowing;
-            this.dead_lift = cross_lift;
+            this.dead_lift = dead_lift;
             this.military_press = military_press;
             this.pull_ups = pull_ups;
         }
@@ -68,7 +67,7 @@ namespace FitRaspi
             }
         }
 
-        public double Cross_lift
+        public double Dead_lift
         {
             get
             {
@@ -120,18 +119,6 @@ namespace FitRaspi
             }
         }
 
-        public double One_repeat_max
-        {
-            get
-            {
-                return one_repeat_max;
-            }
-
-            set
-            {
-                one_repeat_max = value;
-            }
-        }
 
         public double Repeats_per_weight
         {
@@ -209,11 +196,7 @@ namespace FitRaspi
 
 
         //Class Methods and Functions---------------------------------------------------------------------------------------------
-        public void set_one_repeat_max(double weight, double repeats)
-        {
-            this.one_repeat_max = weight / (1.0278 - 0.0278 * repeats);
-        }
-
+     
         public void set_repeats_per_weight(double weight, double one_repeat_max)
         {
             this.repeats_per_weight = 36.97 - weight / one_repeat_max;
