@@ -64,9 +64,8 @@ namespace FitRaspi
 
 
         // Static Methods and Functions----------------------------------------------------------------------------------------------
-        public static double calc_extra_calories (Cl_Athlete athlete)
+        public static double calc_job_calories (Cl_Athlete athlete, string job_factor)
         {
-            string job_factor = "1";
             switch (job_factor)
             {
                 case "easy":
@@ -98,6 +97,72 @@ namespace FitRaspi
             }
 
             return result;
+        }
+
+        public static double calc_sport_calories(Cl_Athlete athlete, TimeSpan time, string sport_value)
+        {
+            switch(sport_value)
+            {
+                case "soccer":
+                    sport_value = "1.27";
+                    break;
+                case "running":
+                    sport_value = "0.15";
+                    break;
+                case "biking":
+                    sport_value = "0.07";
+                    break;
+                case "swimming":
+                    sport_value = "1.46";
+                    break;
+                case "walking":
+                    sport_value = "0.6";
+                    break;
+            }
+
+            double result;
+            double weight = athlete.Weight;
+            double min = time.Minutes;
+
+            result = Convert.ToDouble(sport_value) * weight * min;
+
+            return result;
+        }
+
+        public static double set_goal_calories(string goals)
+        {
+            switch (goals)
+            {
+                case "gain weight slowly":
+                    goals = "250";
+                    break;
+                case "gain weight normaly":
+                    goals = "500";
+                    break;
+                case "gain weight fast":
+                    goals = "750";
+                    break;
+                case "gain weight faster":
+                    goals = "1000";
+                    break;
+                case "lose weight slowly":
+                    goals = "- 250";
+                    break;
+                case "lose weight normaly":
+                    goals = "- 500";
+                    break;
+                case "lose weight fast":
+                    goals = "- 750";
+                    break;
+                case "lose weight faster":
+                    goals = "- 1000";
+                    break;
+                case "keep weight":
+                    goals = "0";
+                    break;
+            }
+
+            return (Convert.ToDouble(goals));
         }
     }   
 }
