@@ -9,7 +9,7 @@ namespace FitRaspi
     class Cl_ActivityCalculator
     {
         //Property Definition -----------------------------------------------------------------------------------------------------
-        private double job;
+        private double job_factor;
         private double sport;
         private double goal;
         //-------------------------------------------------------------------------------------------------------------------------
@@ -44,16 +44,16 @@ namespace FitRaspi
             }
         }
 
-        public double Job
+        public double Job_factor
         {
             get
             {
-                return job;
+                return job_factor;
             }
 
             set
             {
-                job = value;
+                job_factor = value;
             }
         }
 
@@ -64,126 +64,38 @@ namespace FitRaspi
 
 
         // Static Methods and Functions----------------------------------------------------------------------------------------------
-
-        //was jetzt folgt is bestimmt falsch, bzw nicht so von dir erdacht worden
-
-
-        public static double calc_job_male(Cl_Athlete athlete)
+        public static double calc_extra_calories (Cl_Athlete athlete)
         {
+            string job_factor = "1";
+            switch (job_factor)
+            {
+                case "easy":
+                    job_factor ="1.4";
+                    break;
+                case "normal":
+                    job_factor = "1.6";
+                    break;
+                case "heavy":
+                    job_factor = "1.8";
+                    break;
+                case "heavier":
+                    job_factor = "2.0";
+                    break;
+            }
+
             double result;
-
             double weight = athlete.Weight;
-
             double height = athlete.Height;
-
             int age = athlete.Age;
 
-            result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * 1.4 - (66.47 + (13.7 * weight + 5 * height - 6.8 * age));
-
-            return result;
-        }
-
-        public static double calc_job_normal_male(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * 1.6 - (66.47 + (13.7 * weight + 5 * height - 6.8 * age));
-
-            return result;
-        }
-
-        public static double calc_job_heavy_male(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * 1.8 - (66.47 + (13.7 * weight + 5 * height - 6.8 * age));
-
-            return result;
-        }
-
-        public static double calc_job_heavier_male(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * 2 - (66.47 + (13.7 * weight + 5 * height - 6.8 * age));
-
-            return result;
-        }
-
-        public static double calc_job_easy_female(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age)) * 1.4 - (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age));
-
-            return result;
-        }
-
-        public static double calc_job_normal_female(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age)) * 1.6 - (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age));
-
-            return result;
-        }
-
-        public static double calc_job_heavy_female(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age)) * 1.8 - (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age));
-
-            return result;
-        }
-
-        public static double calc_job_heavier_female(Cl_Athlete athlete)
-        {
-            double result;
-
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            result = (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age)) * 2 - (655.1 + (9.8 * weight + 1.8 * height - 4.7 * age));
+            if(athlete.Sex = male)
+            {
+                result = ((66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * Convert.ToDouble(job_factor) - (66.47 + (13.7 * weight + 5 * height - 6.8 * age)));
+            }
+            else
+            {
+                result = ((655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) * Convert.ToDouble(job_factor) - (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)));
+            }
 
             return result;
         }

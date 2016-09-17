@@ -121,7 +121,7 @@ namespace FitRaspi
             return result;
         }
 
-        public static double calc_kcal_male(Cl_Athlete athlete, Cl_ActivityCalculator activity)
+        public static double calc_kcal(Cl_Athlete athlete, Cl_ActivityCalculator activity)
         {
             double weight = athlete.Weight;
 
@@ -129,7 +129,7 @@ namespace FitRaspi
 
             int age = athlete.Age;
 
-            double job = activity.Job;
+            double job = activity.Job_factor;
 
             double sport = activity.Sport;
 
@@ -137,28 +137,14 @@ namespace FitRaspi
 
             double result;
 
-            result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) + job + sport + goal;
-
-            return result;
-        }
-
-        public static double calc_kcal_female(Cl_Athlete athlete, Cl_ActivityCalculator activity)
-        {
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            double job = activity.Job;
-
-            double sport = activity.Sport;
-
-            double goal = activity.Goal;
-
-            double result;
-
-            result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) + job + sport + goal;
+            if (athlete.Sex = male)
+            {
+                result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) + job + sport + goal;
+            }
+            else
+            {
+                result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) + job + sport + goal;
+            }
 
             return result;
         }
