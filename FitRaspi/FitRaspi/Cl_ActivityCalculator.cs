@@ -87,7 +87,7 @@ namespace FitRaspi
             double height = athlete.Height;
             int age = athlete.Age;
 
-            if(ReferenceEquals(athlete.Sex, "male"))
+            if(athlete.Sex == "male")
             {
                 result = ((66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * Convert.ToDouble(job_factor) - (66.47 + (13.7 * weight + 5 * height - 6.8 * age)));
             }
@@ -123,8 +123,9 @@ namespace FitRaspi
             double result;
             double weight = athlete.Weight;
             double min = time.Minutes;
+            double days = time.Days;
 
-            result = Convert.ToDouble(sport_value) * weight * min;
+            result = Convert.ToDouble(sport_value) * weight * min * days;
 
             return result;
         }
