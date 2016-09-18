@@ -76,7 +76,7 @@ namespace FitRaspi
         {
             try
             {
-                double stomach = Convert.ToDouble(tB_stomach.Text); // das hier war wohl auch nicht die cleverste Lösung #ichbinimmernochdumm
+                double stomach = Convert.ToDouble(tB_stomach.Text); 
                 double neck = Convert.ToDouble(tB_neck.Text);
                 double height = Convert.ToDouble(tB_height.Text);
                 double waist = Convert.ToDouble(tB_waist.Text);

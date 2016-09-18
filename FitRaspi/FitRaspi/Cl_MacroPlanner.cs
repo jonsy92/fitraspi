@@ -139,11 +139,11 @@ namespace FitRaspi
 
             if (athlete.Sex == "male")
             {
-                result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) + job + sport + goal;
+                result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * job + sport + goal;
             }
             else
             {
-                result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) + job + sport + goal;
+                result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) * job + sport + goal;
             }
 
             return result;

@@ -64,7 +64,7 @@ namespace FitRaspi
 
 
         // Static Methods and Functions----------------------------------------------------------------------------------------------
-        public static double calc_job_calories (Cl_Athlete athlete, string job_factor)
+        public static double calc_job_calories (string job_factor)
         {
             switch (job_factor)
             {
@@ -82,21 +82,7 @@ namespace FitRaspi
                     break;
             }
 
-            double result;
-            double weight = athlete.Weight;
-            double height = athlete.Height;
-            int age = athlete.Age;
-
-            if(athlete.Sex == "male")
-            {
-                result = ((66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * Convert.ToDouble(job_factor) - (66.47 + (13.7 * weight + 5 * height - 6.8 * age)));
-            }
-            else
-            {
-                result = ((655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) * Convert.ToDouble(job_factor) - (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)));
-            }
-
-            return result;
+            return (Convert.ToDouble(job_factor));
         }
 
         public static double calc_sport_calories(Cl_Athlete athlete, TimeSpan time, string sport_value)
@@ -125,7 +111,7 @@ namespace FitRaspi
             double min = time.Minutes;
             double days = time.Days;
 
-            result = Convert.ToDouble(sport_value) * weight * min * days;
+            result = (Convert.ToDouble(sport_value) * weight * min * days) / 7;
 
             return result;
         }
@@ -134,28 +120,28 @@ namespace FitRaspi
         {
             switch (goals)
             {
-                case "gain weight slowly":
+                case "gain 0.5kg/week":
                     goals = "250";
                     break;
-                case "gain weight normaly":
+                case "gain 1kg/week":
                     goals = "500";
                     break;
-                case "gain weight fast":
+                case "gain 1.5kg/week":
                     goals = "750";
                     break;
-                case "gain weight faster":
+                case "gain 2kg/week":
                     goals = "1000";
                     break;
-                case "lose weight slowly":
+                case "lose 0.5kg/week":
                     goals = "- 250";
                     break;
-                case "lose weight normaly":
+                case "lose 1kg/week":
                     goals = "- 500";
                     break;
-                case "lose weight fast":
+                case "lose 1.5kg/week":
                     goals = "- 750";
                     break;
-                case "lose weight faster":
+                case "lose 2kg/week":
                     goals = "- 1000";
                     break;
                 case "keep weight":
