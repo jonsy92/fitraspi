@@ -137,5 +137,54 @@ namespace FitRaspi
             }
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Cl_Athlete Daniel = new Cl_Athlete("DanielS", "daniel1093@icloud.com", "male", 78, 175, mC_birthdate.SelectionRange.Start);
+
+            Cl_ActivityCalculator activity = new Cl_ActivityCalculator();
+
+            activity.Goal_kcal = Cl_ActivityCalculator.calc_goal_calories(0.5);
+
+            activity.Job_factor = Cl_ActivityCalculator.get_job_factor("heavy");
+
+            activity.Sport_kcal = Cl_ActivityCalculator.get_sport_calories(Daniel, 60, 3, "soccer");
+
+            Daniel.Kfa = Cl_Athlete.calc_kfa(100, 78, Daniel.Height);
+
+            Daniel.Bizeps_left = 34;
+
+            Daniel.Bizeps_right = 33.5;
+
+            Daniel.Butt = 98;
+
+            Daniel.Calf_left = 39;
+
+            Daniel.Calf_right = 38;
+
+            Daniel.Chest = 98;
+
+            Daniel.Ffm = Cl_Athlete.calc_ffm(Daniel.Weight, Daniel.Kfa);
+
+            Daniel.Ffmi = Cl_Athlete.calc_ffmi(Daniel.Height, Daniel.Ffm);
+
+            Daniel.Kcal = Convert.ToInt32(Cl_Athlete.calc_kcal(activity, Daniel));
+
+            Daniel.Lat = 100;
+
+            Daniel.Quad_left = 88;
+
+            Daniel.Quad_right = 87.5;
+
+            Daniel.Shoulders = 105;
+
+            Daniel.Stomach = 100;
+
+            Daniel.Waist = 90;
+
+            Daniel.Neck = 77;
+
+            MessageBox.Show("Meine Daten sind wie folgt: \n" + Daniel.Kfa + "\n" + Daniel.Ffm + "\n" + Daniel.Ffmi + "\n" + Daniel.Kcal);
+        }
     }
 }

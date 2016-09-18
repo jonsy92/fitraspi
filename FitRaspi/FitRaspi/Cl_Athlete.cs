@@ -20,6 +20,19 @@ namespace FitRaspi
         private double kfa;
         private int age;
         private int kcal;
+        private double stomach;
+        private double bizeps_left;
+        private double bizeps_right;
+        private double chest;
+        private double quad_left;
+        private double quad_right;
+        private double butt;
+        private double neck;
+        private double shoulders;
+        private double lat;
+        private double waist;
+        private double calf_left;
+        private double calf_right;
         
         
         //-------------------------------------------------------------------------------------------------------------------------
@@ -171,6 +184,175 @@ namespace FitRaspi
             }
         }
 
+        public double Stomach
+        {
+            get
+            {
+                return stomach;
+            }
+
+            set
+            {
+                stomach = value;
+            }
+        }
+
+        public double Bizeps_left
+        {
+            get
+            {
+                return bizeps_left;
+            }
+
+            set
+            {
+                bizeps_left = value;
+            }
+        }
+
+        public double Bizeps_right
+        {
+            get
+            {
+                return bizeps_right;
+            }
+
+            set
+            {
+                bizeps_right = value;
+            }
+        }
+
+        public double Chest
+        {
+            get
+            {
+                return chest;
+            }
+
+            set
+            {
+                chest = value;
+            }
+        }
+
+        public double Quad_left
+        {
+            get
+            {
+                return quad_left;
+            }
+
+            set
+            {
+                quad_left = value;
+            }
+        }
+
+        public double Quad_right
+        {
+            get
+            {
+                return quad_right;
+            }
+
+            set
+            {
+                quad_right = value;
+            }
+        }
+
+        public double Butt
+        {
+            get
+            {
+                return butt;
+            }
+
+            set
+            {
+                butt = value;
+            }
+        }
+
+        public double Neck
+        {
+            get
+            {
+                return neck;
+            }
+
+            set
+            {
+                neck = value;
+            }
+        }
+
+        public double Shoulders
+        {
+            get
+            {
+                return shoulders;
+            }
+
+            set
+            {
+                shoulders = value;
+            }
+        }
+
+        public double Lat
+        {
+            get
+            {
+                return lat;
+            }
+
+            set
+            {
+                lat = value;
+            }
+        }
+
+        public double Waist
+        {
+            get
+            {
+                return waist;
+            }
+
+            set
+            {
+                waist = value;
+            }
+        }
+
+        public double Calf_left
+        {
+            get
+            {
+                return calf_left;
+            }
+
+            set
+            {
+                calf_left = value;
+            }
+        }
+
+        public double Calf_right
+        {
+            get
+            {
+                return calf_right;
+            }
+
+            set
+            {
+                calf_right = value;
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -178,22 +360,24 @@ namespace FitRaspi
 
 
         // Constructors------------------------------------------------------------------------------------------------------------
-        public Cl_Athlete (string nickname, string firstname, string email, string sex, double weight, double height)
+        public Cl_Athlete (string nickname, string email, string sex, double weight, double height, DateTime birthday)
         {
             this.nickname = nickname;
             this.email = email;
             this.sex = sex;
             this.weight = weight;
             this.height = height;
+            this.birthday = birthday;
+            this.age = Cl_Athlete.calc_age(birthday);
         }
 
-        public Cl_Athlete (string nickname, string email, string sex, DateTime birthday, int age, double weight, double height, double ffm, double ffmi, double kfa)
+        public Cl_Athlete (string nickname, string email, string sex, DateTime birthday, double weight, double height, double ffm, double ffmi, double kfa)
         {
             this.nickname = nickname;
             this.email = email;
             this.sex = sex;
             this.birthday = birthday;
-            this.age = age;
+            this.age = Cl_Athlete.calc_age(birthday);
             this.weight = weight;
             this.height = height;
             this.ffm = ffm;
@@ -257,6 +441,38 @@ namespace FitRaspi
             }
             return (age);
         }
+
+        public static double calc_kcal(double weight, double height, int age, string sex, double job_factor, double sport_kcal, double goal_kcal)
+        {
+            double result;
+
+            if (sex == "male")
+            {
+                result = ((66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * job_factor) + sport_kcal + goal_kcal;
+            }
+            else
+            {
+                result = ((655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) * job_factor) + sport_kcal + goal_kcal;
+            }
+
+            return result;
+        }
+
+        public static double calc_kcal(Cl_ActivityCalculator activity, Cl_Athlete athlete)
+        {
+            double result;
+
+            if (athlete.Sex == "male")
+            {
+                result = ((66.47 + (13.7 * athlete.Weight + 5 * athlete.Height - 6.8 * athlete.Age)) * activity.Job_factor) + activity.Sport_kcal + activity.Goal_kcal;
+            }
+            else
+            {
+                result = ((655.1 + (9.6 * athlete.Weight + 1.8 * athlete.Height - 4.7 * athlete.Age)) * activity.Job_factor) + activity.Sport_kcal + activity.Goal_kcal;
+            }
+
+            return result;
+        }
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -264,22 +480,24 @@ namespace FitRaspi
 
 
         //Class Methods and Functions---------------------------------------------------------------------------------------------
-        public void set_kfa(double stomach, double neck, double height)
+        public void set_kfa()
         {
-            this.kfa = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
-        }
-       
-        public void set_kfa(double stomach, double neck, double height, double waist)
-        {
-            this.kfa = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
+            if (sex == "male")
+            {
+                this.kfa = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
+            }
+            else
+            {
+                this.kfa = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
+            }
         }
 
-        public void set_ffm(double weight, double kfa)
+        public void set_ffm()
         {
             this.ffm = weight * (100 - kfa) / 100;
         }
       
-        public void set_ffmi(double height,double ffm)
+        public void set_ffmi()
         {
             this.ffmi = ffm / (height * height) + 6.3 * (1.8 - height);
         }
@@ -293,28 +511,6 @@ namespace FitRaspi
                 age--;
             }
             this.age = age;
-        }
-
-        public static double calc_kcal(double weight, double height, int age, string sex, Cl_ActivityCalculator activity)
-        {
-            double job = activity.Job_factor;
-
-            double sport = activity.Sport;
-
-            double goal = activity.Goal;
-
-            double result;
-
-            if (sex == "male")
-            { 
-                result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) + job + sport + goal;
-            }
-            else
-            {
-                result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) + job + sport + goal;
-            }
-
-            return result;
         }
         //-------------------------------------------------------------------------------------------------------------------------
 
