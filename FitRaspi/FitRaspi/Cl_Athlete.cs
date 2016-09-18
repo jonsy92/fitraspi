@@ -299,7 +299,7 @@ namespace FitRaspi
         {
             double job = activity.Job_factor;
 
-            double sport = activity.Sport;
+            double sport = activity.Sport_kcal;
 
             double goal = activity.Goal;
 

@@ -27,6 +27,47 @@ namespace FitRaspi
             this.password = password;
         }
 
+
+        public string Uid
+        {
+            get
+            {
+                return userid;
+            }
+
+            set
+            {
+                userid = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
+
         public string get_uid(string username)
         {
             MySqlConnection connection = Cl_MySQL.getMySQLConnection();
@@ -83,57 +124,24 @@ namespace FitRaspi
             
         }
 
-
-        public bool check_password(string password)
+        public static string encrypt_password(string normal_password)
         {
-            //Check...
-            //if(password correct)
-            //{
-               return (true);
-            //}
-            //else
-            //{
-            //    return (false);
-            //}
+            string hash_password = normal_password.GetHashCode;
+            string normal = hash_password.
         }
 
-        public string Uid
+        public bool check_password(string input_password,string db_password)
         {
-            get
+           if (input_password == db_password)
             {
-                return userid;
+                return (true);
             }
-
-            set
+            else
             {
-                userid = value;
+                return (false);
             }
         }
 
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
-
-            set
-            {
-                password = value;
-            }
-        }
-
-        public string Username
-        {
-            get
-            {
-                return username;
-            }
-
-            set
-            {
-                username = value;
-            }
-        }
+       
     }
 }

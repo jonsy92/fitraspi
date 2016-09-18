@@ -10,7 +10,7 @@ namespace FitRaspi
     {
         //Property Definition -----------------------------------------------------------------------------------------------------
         private double job_factor;
-        private double sport;
+        private double sport_kcal;
         private double goal;
         //-------------------------------------------------------------------------------------------------------------------------
 
@@ -18,16 +18,16 @@ namespace FitRaspi
 
 
         //Setter und Getter--------------------------------------------------------------------------------------------------------
-        public double Sport
+        public double Sport_kcal
         {
             get
             {
-                return sport;
+                return sport_kcal;
             }
 
             set
             {
-                sport = value;
+                sport_kcal = value;
             }
         }
 
