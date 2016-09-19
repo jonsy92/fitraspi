@@ -146,7 +146,7 @@ namespace FitRaspi
 
             activity.Goal_kcal = Cl_ActivityCalculator.calc_goal_calories(0.5);
 
-            activity.Job_factor = Cl_ActivityCalculator.get_job_factor("heavy");
+            activity.Job_factor = Cl_ActivityCalculator.get_job_factor("normal");
 
             activity.Sport_kcal = Cl_ActivityCalculator.get_sport_calories(Daniel, 60, 3, "soccer");
 
@@ -166,7 +166,7 @@ namespace FitRaspi
 
             Daniel.Ffm = Cl_Athlete.calc_ffm(Daniel.Weight, Daniel.Kfa);
 
-            Daniel.Ffmi = Cl_Athlete.calc_ffmi(Daniel.Height, Daniel.Ffm);
+            Daniel.Ffmi = Cl_Athlete.calc_ffmi(Daniel.Weight, Daniel.Ffm);
 
             Daniel.Kcal = Convert.ToInt32(Cl_Athlete.calc_kcal(activity, Daniel));
 

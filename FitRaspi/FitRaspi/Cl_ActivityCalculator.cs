@@ -87,7 +87,7 @@ namespace FitRaspi
             switch(sport_activity)
             {
                 case "soccer":
-                    sport_factor = 1.27;
+                    sport_factor = 0.127;
                     break;
                 case "running":
                     sport_factor = 0.15;
@@ -96,10 +96,10 @@ namespace FitRaspi
                     sport_factor = 0.07;
                     break;
                 case "swimming":
-                    sport_factor = 1.46;
+                    sport_factor = 0.146;
                     break;
                 case "walking":
-                    sport_factor = 0.6;
+                    sport_factor = 0.06;
                     break;
             }
 

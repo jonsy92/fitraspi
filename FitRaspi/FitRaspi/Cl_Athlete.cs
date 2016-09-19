@@ -399,7 +399,7 @@ namespace FitRaspi
         {
             double result;
 
-            result = 495 / (1.0324 - 0.19077 * Math.Log10(stomach - neck) + 0.15456 * Math.Log10(height)) - 450;
+            result = 495 / 1.0324 - 0.19077 * (stomach - neck) + 0.15456 * height - 450;
 
             return (Math.Round(result, 2));
         }
@@ -408,7 +408,7 @@ namespace FitRaspi
         {
             double result;
 
-            result = 495 / (1.29579 - 0.35004 * Math.Log10(stomach + waist - neck) + 0.22100 * Math.Log10(height)) - 450;
+            result = 495 / 1.29579 - 0.35004 * (stomach + waist - neck) + 0.22100 * height - 450;
 
             return (Math.Round(result, 2));
         }
@@ -422,11 +422,11 @@ namespace FitRaspi
             return (Math.Round(result, 2));
         }
 
-        public static double calc_ffmi(double height, double ffm)
+        public static double calc_ffmi(double weight, double ffm)
         {
             double result;
 
-            result = ffm / (height * height) + 6.3 * (1.8 - height);
+            result = ffm / (weight * weight) + 6.3 * (1.8 - weight);
 
             return (Math.Round(result, 2));
         }
