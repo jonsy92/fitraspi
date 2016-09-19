@@ -148,7 +148,7 @@ namespace FitRaspi
 
             activity.Job_factor = Cl_ActivityCalculator.get_job_factor("normal");
 
-            activity.Sport_kcal = Cl_ActivityCalculator.get_sport_calories(Daniel, 60, 3, "soccer");
+            activity.Sport_kcal = Cl_ActivityCalculator.get_sport_calories(Daniel, 60, 3, "power lifting");
 
             Daniel.Kfa = Cl_Athlete.calc_kfa(100, 78, Daniel.Height);
 
@@ -166,7 +166,7 @@ namespace FitRaspi
 
             Daniel.Ffm = Cl_Athlete.calc_ffm(Daniel.Weight, Daniel.Kfa);
 
-            Daniel.Ffmi = Cl_Athlete.calc_ffmi(Daniel.Weight, Daniel.Ffm);
+            Daniel.Ffmi = Cl_Athlete.calc_ffmi(Daniel.Height, Daniel.Ffm);
 
             Daniel.Kcal = Convert.ToInt32(Cl_Athlete.calc_kcal(activity, Daniel));
 
@@ -185,6 +185,42 @@ namespace FitRaspi
             Daniel.Neck = 77;
 
             MessageBox.Show("Meine Daten sind wie folgt: \n" + Daniel.Kfa + "\n" + Daniel.Ffm + "\n" + Daniel.Ffmi + "\n" + Daniel.Kcal);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Cl_StrengthStats Daniel = new FitRaspi.Cl_StrengthStats(80, 62.5, 67.5, 115, 32.5, 78);
+
+            Daniel.Squats = Cl_StrengthStats.calc_one_repeat_max(Daniel.Squats, 10);
+
+            Daniel.Bench_press = Cl_StrengthStats.calc_one_repeat_max(Daniel.Bench_press, 11);
+
+            Daniel.Dead_lift = Cl_StrengthStats.calc_one_repeat_max(Daniel.Dead_lift, 10);
+
+            Daniel.Barbell_rowing = Cl_StrengthStats.calc_one_repeat_max(Daniel.Barbell_rowing, 10);
+
+            Daniel.Military_press = Cl_StrengthStats.calc_one_repeat_max(Daniel.Military_press, 11);
+
+            Daniel.Pull_ups = Cl_StrengthStats.calc_one_repeat_max(Daniel.Pull_ups, 8);
+
+            Daniel.set_repeats_per_weight(85, Daniel.Squats);
+
+            Daniel.set_weight_per_repeats(Daniel.Squats, 6);
+
+            MessageBox.Show("Meine 1RM's sind: \nSquats: " + Daniel.Squats + "\nBench_Press: " + Daniel.Bench_press +
+                "\nDead_Lift: " + Daniel.Dead_lift + "\nBarbell_Rowing: " + Daniel.Barbell_rowing + "\nMilitary_Press: " + Daniel.Military_press +
+                "\nPull_Ups: " + Daniel.Pull_ups + "\nMeine Wiederholungszahl für 85kg Squats sind: " + Daniel.Repeats_per_weight + "\nMein Gewicht für 6 Wdh's Squats ist: " + Daniel.Weight_per_repeats );
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cl_MacroPlanner Daniel = new Cl_MacroPlanner();
+
+            Cl_Athlete Me = new Cl_Athlete("Daniel10S", "bsp@i.com", "male", 78, 175, mC_birthdate.SelectionRange.Start);
+
+            Daniel.Kcal = Cl_MacroPlanner.calc_kcal(190, 40, 360);
+
+            MessageBox.Show("Du solltest " + Daniel.Kcal + " kcal pro Tag zu dir nehmen.");
         }
     }
 }

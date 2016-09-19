@@ -101,6 +101,9 @@ namespace FitRaspi
                 case "walking":
                     sport_factor = 0.06;
                     break;
+                case "power lifting":
+                    sport_factor = 0.11;
+                    break;
             }
 
             double result;

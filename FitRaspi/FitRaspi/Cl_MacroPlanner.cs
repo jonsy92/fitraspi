@@ -77,7 +77,7 @@ namespace FitRaspi
             }
         }
 
-        public int Carbohxdrates
+        public int Carbohydrates
         {
             get
             {

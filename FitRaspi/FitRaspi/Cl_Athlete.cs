@@ -422,11 +422,13 @@ namespace FitRaspi
             return (Math.Round(result, 2));
         }
 
-        public static double calc_ffmi(double weight, double ffm)
+        public static double calc_ffmi(double height, double ffm)
         {
             double result;
 
-            result = ffm / (weight * weight) + 6.3 * (1.8 - weight);
+            height = height / 100;
+
+            result = ffm / (height * height) + 6.3 * (1.8 - height);
 
             return (Math.Round(result, 2));
         }
