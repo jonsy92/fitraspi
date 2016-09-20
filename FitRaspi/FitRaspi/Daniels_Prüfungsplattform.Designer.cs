@@ -43,7 +43,6 @@
             this.rB_minus = new System.Windows.Forms.RadioButton();
             this.rB_geteilt = new System.Windows.Forms.RadioButton();
             this.rB_mal = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_rechne = new System.Windows.Forms.Button();
             this.lbl_operator = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
@@ -87,7 +86,6 @@
             this.panel2.Controls.Add(this.btn_close);
             this.panel2.Controls.Add(this.lbl_operator);
             this.panel2.Controls.Add(this.btn_rechne);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.tB_zahl2);
             this.panel2.Controls.Add(this.label6);
@@ -228,15 +226,6 @@
             this.rB_mal.CheckedChanged += new System.EventHandler(this.rB_mal_CheckedChanged);
             this.rB_mal.Click += new System.EventHandler(this.rB_mal_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btn_rechne
             // 
             this.btn_rechne.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -360,7 +349,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_operator;
         private System.Windows.Forms.Button btn_rechne;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_zusatz;
