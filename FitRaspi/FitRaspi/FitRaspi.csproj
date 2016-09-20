@@ -73,6 +73,12 @@
     <Compile Include="Cl_StrengthStats.cs" />
     <Compile Include="Cl_Training.cs" />
     <Compile Include="Cl_User.cs" />
+    <Compile Include="Daniels_Prüfungsplattform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daniels_Prüfungsplattform.Designer.cs">
+      <DependentUpon>Daniels_Prüfungsplattform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testformular.cs">
@@ -81,6 +87,9 @@
     <Compile Include="Testformular.Designer.cs">
       <DependentUpon>Testformular.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Daniels_Prüfungsplattform.resx">
+      <DependentUpon>Daniels_Prüfungsplattform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

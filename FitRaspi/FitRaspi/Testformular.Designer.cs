@@ -31,9 +31,10 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_sqlconnection = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.btn_calc_age = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_classtester = new System.Windows.Forms.Button();
             this.btn_close_database_connection = new System.Windows.Forms.Button();
@@ -58,8 +59,8 @@
             this.lbl_height = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mC_birthdate = new System.Windows.Forms.MonthCalendar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -96,18 +97,6 @@
             this.btn_sqlconnection.UseVisualStyleBackColor = true;
             this.btn_sqlconnection.Click += new System.EventHandler(this.btn_sqlconnection_Click);
             // 
-            // btn_close
-            // 
-            this.btn_close.BackgroundImage = global::FitRaspi.Properties.Resources.exit;
-            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_close.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(424, 376);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(134, 99);
-            this.btn_close.TabIndex = 4;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
             // btn_calc_age
             // 
             this.btn_calc_age.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +111,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
@@ -137,6 +127,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(558, 475);
             this.panel2.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(162, 122);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 53);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Test my StrengthStats_Class";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(162, 181);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 53);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Test my Macroplaner_Class";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -386,27 +398,29 @@
             this.mC_birthdate.Name = "mC_birthdate";
             this.mC_birthdate.TabIndex = 1;
             // 
-            // button2
+            // button4
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(162, 181);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 53);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Test my Macroplaner_Class";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button4.BackColor = System.Drawing.Color.Chartreuse;
+            this.button4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(162, 241);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(285, 130);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Hier gehts zu deinem Test mein Guter ! ;)";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btn_close
             // 
-            this.button3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(162, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 53);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Test my StrengthStats_Class";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_close.BackgroundImage = global::FitRaspi.Properties.Resources.exit;
+            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_close.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.Location = new System.Drawing.Point(424, 376);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(134, 99);
+            this.btn_close.TabIndex = 4;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // Testformular
             // 
@@ -460,5 +474,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

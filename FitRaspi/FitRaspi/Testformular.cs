@@ -242,6 +242,13 @@ namespace FitRaspi
             MessageBox.Show("Du solltest " + Daniel.Kcal + " kcal pro Tag zu dir nehmen.");
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Daniels_Prüfungsplattform d_pf = new Daniels_Prüfungsplattform();
+            d_pf.Show();
+        }
     }
 }
 
