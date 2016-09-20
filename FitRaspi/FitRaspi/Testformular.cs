@@ -128,10 +128,19 @@ namespace FitRaspi
 
             try
             {
-                string userid = jonas.get_uid(jonas.Username);
-                MessageBox.Show("My password is: " + jonas.get_password(userid), "Info");
+                string testpw = "MeinjungerPadawanLerntSchnell";
+                string hashvalue = Cl_User.encrypt_password(testpw);
+
+                if (jonas.check_password(testpw, hashvalue))
+                {
+                    MessageBox.Show("Mein coding funzt Digga!! :D");
+                }
+                else
+                {
+                    MessageBox.Show("Mein coding funzt nich... :(");
+                }
             }
-            catch(MySqlException ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

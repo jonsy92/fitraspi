@@ -126,11 +126,12 @@ namespace FitRaspi
 
         public static string encrypt_password(string normal_password)
         {
-            return "";
+            return (normal_password.GetHashCode().ToString());
         }
 
         public bool check_password(string input_password,string db_password)
         {
+           input_password = encrypt_password(input_password);
            if (input_password == db_password)
             {
                 return (true);
