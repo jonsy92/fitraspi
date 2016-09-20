@@ -62,7 +62,31 @@ namespace FitRaspi
 
         private void btn_rechne_Click(object sender, EventArgs e)
         {
-            // Hier darfst du dann die Methoden deiner Klasse verwenden um das Ergebnis zu berechenn ;)
+            int zahl1 = Convert.ToInt32(tB_zahl1.Text);
+            int zahl2 = Convert.ToInt32(tB_zahl2.Text);
+            int zahl3 = Convert.ToInt32(tB_zahl3.Text);
+            string rechenoperator = "";
+
+            if (rB_plus.Checked)
+            {
+                rechenoperator = "+";
+            }
+            else if (rB_minus.Checked)
+            {
+                rechenoperator = "-";
+            }
+            else if (rB_mal.Checked)
+            {
+                rechenoperator = "*";
+            }
+            else if (rB_geteilt.Checked)
+            {
+                rechenoperator = "/";
+            }
+
+            //lbl_ergebnis.Text =  --> Hier sollst du nachher die Funktion "calculate" aufrufen,
+            // die folgende Funktionalität besitzen soll: Addition,Subtraktion,Multiplikation und Division von sowohl 2 als auch 3 Zahlen.
+            
         }
 
         private void btn_zusatz_Click(object sender, EventArgs e)
