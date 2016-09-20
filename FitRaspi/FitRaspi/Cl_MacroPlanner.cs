@@ -77,7 +77,7 @@ namespace FitRaspi
             }
         }
 
-        public int Carbohxdrates
+        public int Carbohydrates
         {
             get
             {
@@ -117,34 +117,6 @@ namespace FitRaspi
             int result;
 
             result = protein * 4 + fat * 9 + carbohydates * 4;
-
-            return result;
-        }
-
-        public static double calc_kcal(Cl_Athlete athlete, Cl_ActivityCalculator activity)
-        {
-            double weight = athlete.Weight;
-
-            double height = athlete.Height;
-
-            int age = athlete.Age;
-
-            double job = activity.Job_factor;
-
-            double sport = activity.Sport_kcal;
-
-            double goal = activity.Goal;
-
-            double result;
-
-            if (athlete.Sex == "male")
-            {
-                result = (66.47 + (13.7 * weight + 5 * height - 6.8 * age)) * job + sport + goal;
-            }
-            else
-            {
-                result = (655.1 + (9.6 * weight + 1.8 * height - 4.7 * age)) * job + sport + goal;
-            }
 
             return result;
         }

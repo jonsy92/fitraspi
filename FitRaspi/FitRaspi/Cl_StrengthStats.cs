@@ -173,7 +173,7 @@ namespace FitRaspi
         {
             double result;
 
-            result = 36.97 - weight / one_repeat_max;
+            result = 36.97 - ((weight / one_repeat_max) / 0.0278);
 
             Convert.ToInt32(result);
 
@@ -199,7 +199,7 @@ namespace FitRaspi
      
         public void set_repeats_per_weight(double weight, double one_repeat_max)
         {
-            this.repeats_per_weight = 36.97 - weight / one_repeat_max;
+            this.repeats_per_weight = 36.97 - ((weight / one_repeat_max) / 0.0278);
         }
 
         public void set_weight_per_repeats(double one_repeat_max, double repeats)

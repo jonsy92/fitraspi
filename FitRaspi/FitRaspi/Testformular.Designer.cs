@@ -34,11 +34,15 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_calc_age = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_classtester = new System.Windows.Forms.Button();
             this.btn_close_database_connection = new System.Windows.Forms.Button();
             this.btn_calc_ffmi = new System.Windows.Forms.Button();
             this.btn_calc_ffm = new System.Windows.Forms.Button();
             this.btn_calc_kfa = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tB_Nickname = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rB_female = new System.Windows.Forms.RadioButton();
             this.rB_male = new System.Windows.Forms.RadioButton();
@@ -54,9 +58,8 @@
             this.lbl_height = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mC_birthdate = new System.Windows.Forms.MonthCalendar();
-            this.btn_classtester = new System.Windows.Forms.Button();
-            this.tB_Nickname = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,6 +122,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btn_classtester);
             this.panel2.Controls.Add(this.btn_close_database_connection);
             this.panel2.Controls.Add(this.btn_calc_ffmi);
@@ -131,6 +137,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(558, 475);
             this.panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(162, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 53);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Test my Athlete_Class";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // btn_classtester
+            // 
+            this.btn_classtester.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_classtester.Location = new System.Drawing.Point(3, 300);
+            this.btn_classtester.Name = "btn_classtester";
+            this.btn_classtester.Size = new System.Drawing.Size(153, 53);
+            this.btn_classtester.TabIndex = 10;
+            this.btn_classtester.Text = "Test my User_Class";
+            this.btn_classtester.UseVisualStyleBackColor = true;
+            this.btn_classtester.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_close_database_connection
             // 
@@ -199,6 +227,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(467, 475);
             this.panel3.TabIndex = 6;
+            // 
+            // tB_Nickname
+            // 
+            this.tB_Nickname.Location = new System.Drawing.Point(271, 280);
+            this.tB_Nickname.Name = "tB_Nickname";
+            this.tB_Nickname.Size = new System.Drawing.Size(100, 20);
+            this.tB_Nickname.TabIndex = 20;
+            this.tB_Nickname.Text = "Jonas";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(198, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nickname:";
             // 
             // label2
             // 
@@ -340,34 +386,27 @@
             this.mC_birthdate.Name = "mC_birthdate";
             this.mC_birthdate.TabIndex = 1;
             // 
-            // btn_classtester
+            // button2
             // 
-            this.btn_classtester.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_classtester.Location = new System.Drawing.Point(3, 300);
-            this.btn_classtester.Name = "btn_classtester";
-            this.btn_classtester.Size = new System.Drawing.Size(153, 53);
-            this.btn_classtester.TabIndex = 10;
-            this.btn_classtester.Text = "Test my class";
-            this.btn_classtester.UseVisualStyleBackColor = true;
-            this.btn_classtester.Click += new System.EventHandler(this.button1_Click_1);
+            this.button2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(162, 181);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 53);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Test my Macroplaner_Class";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tB_Nickname
+            // button3
             // 
-            this.tB_Nickname.Location = new System.Drawing.Point(271, 280);
-            this.tB_Nickname.Name = "tB_Nickname";
-            this.tB_Nickname.Size = new System.Drawing.Size(100, 20);
-            this.tB_Nickname.TabIndex = 20;
-            this.tB_Nickname.Text = "Jonas";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(198, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Nickname:";
+            this.button3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(162, 122);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 53);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Test my StrengthStats_Class";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Testformular
             // 
@@ -418,5 +457,8 @@
         private System.Windows.Forms.Button btn_classtester;
         private System.Windows.Forms.TextBox tB_Nickname;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }

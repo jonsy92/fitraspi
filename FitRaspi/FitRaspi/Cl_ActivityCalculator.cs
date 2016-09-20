@@ -11,36 +11,23 @@ namespace FitRaspi
         //Property Definition -----------------------------------------------------------------------------------------------------
         private double job_factor;
         private double sport_kcal;
-        private double goal;
+        private double goal_kcal;
         //-------------------------------------------------------------------------------------------------------------------------
 
 
 
 
         //Setter und Getter--------------------------------------------------------------------------------------------------------
-        public double Sport_kcal
+        public double Goal_kcal
         {
             get
             {
-                return sport_kcal;
+                return goal_kcal;
             }
 
             set
             {
-                sport_kcal = value;
-            }
-        }
-
-        public double Goal
-        {
-            get
-            {
-                return goal;
-            }
-
-            set
-            {
-                goal = value;
+                goal_kcal = value;
             }
         }
 
@@ -57,6 +44,19 @@ namespace FitRaspi
             }
         }
 
+        public double Sport_kcal
+        {
+            get
+            {
+                return sport_kcal;
+            }
+
+            set
+            {
+                sport_kcal = value;
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -64,92 +64,61 @@ namespace FitRaspi
 
 
         // Static Methods and Functions----------------------------------------------------------------------------------------------
-        public static double calc_job_calories (string job_factor)
+        public static double get_job_factor(string job_activitylvl)
         {
-            switch (job_factor)
+            switch (job_activitylvl)
             {
                 case "easy":
-                    job_factor ="1.4";
-                    break;
+                    return (1.4);
                 case "normal":
-                    job_factor = "1.6";
-                    break;
+                    return (1.6);
                 case "heavy":
-                    job_factor = "1.8";
-                    break;
+                    return (1.8);
                 case "heavier":
-                    job_factor = "2.0";
-                    break;
+                    return (2);
             }
 
-            return (Convert.ToDouble(job_factor));
+            return (1);
         }
 
-        public static double calc_sport_calories(Cl_Athlete athlete, TimeSpan time, string sport_value)
+        public static double get_sport_calories(Cl_Athlete athlete, int min, int days, string sport_activity)
         {
-            switch(sport_value)
+            double sport_factor = 0;
+            switch(sport_activity)
             {
                 case "soccer":
-                    sport_value = "1.27";
+                    sport_factor = 0.127;
                     break;
                 case "running":
-                    sport_value = "0.15";
+                    sport_factor = 0.15;
                     break;
                 case "biking":
-                    sport_value = "0.07";
+                    sport_factor = 0.07;
                     break;
                 case "swimming":
-                    sport_value = "1.46";
+                    sport_factor = 0.146;
                     break;
                 case "walking":
-                    sport_value = "0.6";
+                    sport_factor = 0.06;
+                    break;
+                case "power lifting":
+                    sport_factor = 0.11;
                     break;
             }
 
             double result;
             double weight = athlete.Weight;
-            double min = time.Minutes;
-            double days = time.Days;
 
-            result = (Convert.ToDouble(sport_value) * weight * min * days) / 7;
+            result = (sport_factor * weight * min * days) / 7;
 
             return result;
         }
 
-        public static double set_goal_calories(string goals)
+        public static double calc_goal_calories(double weight_per_week)
         {
-            switch (goals)
-            {
-                case "gain 0.5kg/week":
-                    goals = "250";
-                    break;
-                case "gain 1kg/week":
-                    goals = "500";
-                    break;
-                case "gain 1.5kg/week":
-                    goals = "750";
-                    break;
-                case "gain 2kg/week":
-                    goals = "1000";
-                    break;
-                case "lose 0.5kg/week":
-                    goals = "- 250";
-                    break;
-                case "lose 1kg/week":
-                    goals = "- 500";
-                    break;
-                case "lose 1.5kg/week":
-                    goals = "- 750";
-                    break;
-                case "lose 2kg/week":
-                    goals = "- 1000";
-                    break;
-                case "keep weight":
-                    goals = "0";
-                    break;
-            }
+            double kcal = (weight_per_week * 7000) / 7;
 
-            return (Convert.ToDouble(goals));
+            return kcal;
         }
     }   
 }
