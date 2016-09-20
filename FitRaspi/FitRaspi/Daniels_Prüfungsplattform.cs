@@ -62,31 +62,49 @@ namespace FitRaspi
 
         private void btn_rechne_Click(object sender, EventArgs e)
         {
-            int zahl1 = Convert.ToInt32(tB_zahl1.Text);
-            int zahl2 = Convert.ToInt32(tB_zahl2.Text);
-            int zahl3 = Convert.ToInt32(tB_zahl3.Text);
-            string rechenoperator = "";
+            try
+            {
+                int zahl1 = Convert.ToInt32(tB_zahl1.Text);
+                int zahl2 = Convert.ToInt32(tB_zahl2.Text);
+                if (tB_zahl3.Visible)
+                {
+                    int zahl3 = Convert.ToInt32(tB_zahl3.Text);
+                }
 
-            if (rB_plus.Checked)
-            {
-                rechenoperator = "+";
-            }
-            else if (rB_minus.Checked)
-            {
-                rechenoperator = "-";
-            }
-            else if (rB_mal.Checked)
-            {
-                rechenoperator = "*";
-            }
-            else if (rB_geteilt.Checked)
-            {
-                rechenoperator = "/";
-            }
+                string rechenoperator = "";
 
-            //lbl_ergebnis.Text =  --> Hier sollst du nachher die Funktion "calculate" aufrufen,
-            // die folgende Funktionalität besitzen soll: Addition,Subtraktion,Multiplikation und Division von sowohl 2 als auch 3 Zahlen.
-            
+                if (rB_plus.Checked)
+                {
+                    rechenoperator = "+";
+                }
+                else if (rB_minus.Checked)
+                {
+                    rechenoperator = "-";
+                }
+                else if (rB_mal.Checked)
+                {
+                    rechenoperator = "*";
+                }
+                else if (rB_geteilt.Checked)
+                {
+                    rechenoperator = "/";
+                }
+
+                //lbl_ergebnis.Text =  --> Hier sollst du nachher die Funktion "calculate" aufrufen,
+                // die folgende Funktionalität besitzen soll: Addition,Subtraktion,Multiplikation und Division von sowohl 2 als auch 3 Zahlen.
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(DivideByZeroException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_zusatz_Click(object sender, EventArgs e)
