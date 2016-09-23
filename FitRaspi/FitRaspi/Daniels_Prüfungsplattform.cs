@@ -66,10 +66,6 @@ namespace FitRaspi
             {
                 int zahl1 = Convert.ToInt32(tB_zahl1.Text);
                 int zahl2 = Convert.ToInt32(tB_zahl2.Text);
-                if (tB_zahl3.Visible)
-                {
-                    int zahl3 = Convert.ToInt32(tB_zahl3.Text);
-                }
 
                 string rechenoperator = "";
 
@@ -88,6 +84,14 @@ namespace FitRaspi
                 else if (rB_geteilt.Checked)
                 {
                     rechenoperator = "/";
+                }
+
+                lbl_ergebnis.Text = Convert.ToString(Cl_Daniels_Calculator.calculate(zahl1, zahl2, rechenoperator));
+
+                if (tB_zahl3.Visible)
+                {
+                    int zahl3 = Convert.ToInt32(tB_zahl3.Text);
+                    lbl_ergebnis.Text = Convert.ToString(Cl_Daniels_Calculator.calculate(zahl1, zahl2, zahl3, rechenoperator));
                 }
 
                 //lbl_ergebnis.Text =  --> Hier sollst du nachher die Funktion "calculate" aufrufen,
@@ -121,6 +125,11 @@ namespace FitRaspi
                 label7.Visible = true;
                 tB_zahl3.Visible = true;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
